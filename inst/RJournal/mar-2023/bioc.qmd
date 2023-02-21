@@ -65,9 +65,6 @@ The BioC2023 and EuroBioC conferences have both been announced, and abstracts ar
 
 The [Bioconductor blog](https://bioconductor.github.io/biocblog/) is used for articles of interest by and for the community. Recent articles include:
 
-- [Our experience as Outreachy interns with Bioconductor](https://bioconductor.github.io/biocblog/posts/2023-01-22-OutreachyInternship/)  
-Bioconductor participated in the Outreachy Internship program for the December 2022 cohort. Our interns share their experience working on their various projects and Bioconductor in general.
-
 - [Bioconductor Carpentries instructors Year 1](https://mblue9.github.io/biocblog/posts/2023-02-22-carpentries-update/)  
 [update link when posted]
 A update on the applicants selected for Year 1 
@@ -75,6 +72,9 @@ A update on the applicants selected for Year 1
 - [Introducing CuratedAtlasQueryR package](https://mblue9.github.io/biocblog/posts/2023-02-21-CuratedAtlasQueryR/)  
 [update link when posted to biocblog]
 CuratedAtlasQueryR is a new package that enables easy programmatic exploration of CELLxGENE single-cell human cell atlas data.
+
+- [Our experience as Outreachy interns with Bioconductor](https://bioconductor.github.io/biocblog/posts/2023-01-22-OutreachyInternship/)  
+Bioconductor participated in the Outreachy Internship program for the December 2022 cohort. Our interns share their experience working on their various projects and Bioconductor in general.
 
 - [Bioconductor Hacktoberfest 2022 review and looking ahead to 2023](https://bioconductor.github.io/biocblog/posts/2023-01-20-hacktoberfest/)  
 Last October, Bioconductor joined Hacktoberfest and got great community contributions there. Here, we describe its success and notify the community we plan to participate in 2023.
