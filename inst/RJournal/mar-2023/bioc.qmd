@@ -108,7 +108,9 @@ TODO: Other groups ....?
 
 # Other
 
-Proposal was accepted for a workshop on "Opportunities for Bioconductor and ELIXIR communities to co-develop training infrastructure" at the [ELIXIR All Hands meeting](https://elixir-europe.org/events/elixir-all-hands-2023) in Dublin, June 5-8 2023. 
+- Workshop "Opportunities for Bioconductor and ELIXIR communities to co-develop training infrastructure" accepted for the [ELIXIR All Hands meeting](https://elixir-europe.org/events/elixir-all-hands-2023) in Dublin, June 5-8 2023.
+- Workshop "Orchestrating Large-Scale Single-Cell Analysis with Bioconductor" accepted for [ISMB/ECCB 2023](https://www.iscb.org/ismbeccb2023-programme/tutorials#ip4) in Lyon, July 23 2023
+- 
 
 
 # Using Bioconductor
