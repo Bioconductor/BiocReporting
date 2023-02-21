@@ -31,7 +31,7 @@ Microsoft, and Amazon.  In this news report, ....TODO
  
 # Software
 
-The current Bioconductor release is [3.16 release announcement](https://bioconductor.org/news/bioc_3_16_release/), released on 2 November, 2022. It is
+The current Bioconductor release is [3.16](https://bioconductor.org/news/bioc_3_16_release/). It is
 compatible with R 4.2 and consists of 2183 software packages, 416
 experiment data packages, 909 up-to-date annotation packages, 28
 workflows, and 3 books. \href{https://bioconductor.org/books/release/}{Books} are
@@ -86,21 +86,21 @@ Last October, Bioconductor joined Hacktoberfest and got great community contribu
 
 - The [Community Advisory Board](https://bioconductor.org/about/community-advisory-board/) (CAB) are voting in new members. Outgoing members are Susan Holmes, Leonardo Collado-Torres, Yagoub A. I. Adam, Matt Ritchie, Benilton Carvalho, we gratefully thank them for their service.
 
-- There is a Call for Bioconductor Community-Led events supported by the CAB
+- There is a Call for Bioconductor Community-Led events supported by the CAB.
 Apply in [this form](https://forms.gle/oTHp26TG3eP9q4eE7)
 
 
-# Committees and Working groups
+# Committees and Working groups updates
 
 If you are interested in becoming involved with one of these groups please contact the group leader(s).
 
 - [Teaching Committee](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#education)
     - Are planning a hackathon for the [Bioconductor Carpentries RNA-seq lesson](https://carpentries-incubator.github.io/bioc-rnaseq/)
-    - Will be participating in [Galaxy Training Smorgasbord 2023](https://gallantries.github.io/video-library/events/smorgasbord3/), a free online event, May 22-26  
+    - Will be participating in [Galaxy Training Smorgasbord 2023](https://gallantries.github.io/video-library/events/smorgasbord3/), a free online global event, May 22-26  
 
 - [Website working group]([https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#website) are planning the redesign of [bioconductor.org](bioconductor.org).
 
-- [Social media working group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#social-media) have set up [Bioconductor Mastodon acccount](https://genomic.social/@bioconductor)
+- [Social media working group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#social-media). A new group, started in Feb 2023, have set up [Bioconductor Mastodon acccount](https://genomic.social/@bioconductor)
 
 
 TODO: Other groups ....?
