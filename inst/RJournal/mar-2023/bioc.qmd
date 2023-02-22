@@ -117,14 +117,14 @@ If you are interested in becoming involved with one of these groups please conta
     - Are planning a hackathon for the [Bioconductor Carpentries RNA-seq lesson](https://carpentries-incubator.github.io/bioc-rnaseq/)
     - Will be participating in [Galaxy Training Smorgasbord 2023](https://gallantries.github.io/video-library/events/smorgasbord3/), a free online global event, May 22-26  
 
+- [Website working group]([https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#website) are planning the redesign of [bioconductor.org](bioconductor.org).
+
+- [Social media working group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#social-media). A new group, started in Feb 2023, have set up [Bioconductor Mastodon acccount](https://genomic.social/@bioconductor)
+
 - [Cloud Methods](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#cloud-methods)
   held their first meeting Feb 2023. The working group will meet monthly to
   develop standards and tools for the Bioconductor community related to the
   cloud.
-
-- [Website working group]([https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#website) are planning the redesign of [bioconductor.org](bioconductor.org).
-
-- [Social media working group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#social-media). A new group, started in Feb 2023, have set up [Bioconductor Mastodon acccount](https://genomic.social/@bioconductor)
 
 
 TODO: Other groups ....?
