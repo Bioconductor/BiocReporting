@@ -54,11 +54,11 @@ We will be making announcements on bioc-devel mailing list, Twitter, Mastodon, S
 
 # Conferences
 
-The BioC2023 and EuroBioC conferences have both been announced, and abstracts are open. BioC Asia will be announced later this year.
+The BioC2023 and EuroBioC2023 conferences have both been announced, and abstract submissions are open. BioC Asia will be announced later this year.
 
 [BioC2023](https://bioc2023.bioconductor.org/) will be held in Boston, USA from Aug 2-4. Abstracts can be submitted until March 19.
 
-[EuroBioC](https://eurobioc2023.bioconductor.org/) will be held in Ghent, Belgium from Sep 20-22. Abstracts can be submitted until April 14.
+[EuroBioC2023](https://eurobioc2023.bioconductor.org/) will be held in Ghent, Belgium from Sep 20-22. Abstracts can be submitted until April 14.
 
 
 # Blog
