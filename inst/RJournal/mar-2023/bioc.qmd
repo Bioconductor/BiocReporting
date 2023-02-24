@@ -127,6 +127,8 @@ If you are interested in becoming involved with one of these groups please conta
 
 
 # Other
+
+- Summer school *"Statistical Data Analysis for Genome-Scale Biology"* [CSAMA 2023](https://csama2023.bioconductor.eu/) in Bressanone-Brixen, Italy, June 11-16 2023. Application deadline March 15. 
 - Course *"Statistical Analysis of Genome Scale Data"* at [CSHL](https://meetings.cshl.edu/courses.aspx?course=C-DATA&year=23) in New York, USA, June 30 - July 13 2023. Application deadline March 15. 
 - Workshop *"Opportunities for Bioconductor and ELIXIR communities to co-develop training infrastructure"* accepted for the [ELIXIR All Hands meeting](https://elixir-europe.org/events/elixir-all-hands-2023) in Dublin, Ireland, June 5-8 2023.
 - Workshop *"Orchestrating Large-Scale Single-Cell Analysis with Bioconductor"* accepted for [ISMB/ECCB 2023](https://www.iscb.org/ismbeccb2023-programme/tutorials#ip4) in Lyon, France, July 23 2023.
