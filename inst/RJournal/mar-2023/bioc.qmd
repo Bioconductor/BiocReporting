@@ -183,3 +183,7 @@ and adopts practices (such as a
 project-wide [Code of Conduct](https://bioconductor.org/about/code-of-conduct/)
 that encourages all to participate. We look forward to
 welcoming you!
+
+## Bioconductor in Python!
+
+We're excited to introduce [BiocPy](https://www.github.com/biocpy), a project aimed at enabling Bioconductor workflows in Python. Analysts today use a variety of languages in their workflows, including R/Bioconductor for statistical analysis and Python for imaging or machine learning tasks. BiocPy aims to facilitate interoperability between R and Python by providing standardized data structures based on existing Bioconductor data structures. These include genomic ranges for interval based operations, summarized experiments and other derivatives for analyzing genomic experiments. To learn more, visit the [BiocPy](https://github.com/biocpy) GitHub organization.
