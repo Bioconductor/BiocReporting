@@ -50,7 +50,10 @@ community-developed [Orchestrating Single-Cell Analysis with Bioconductor](https
 
 TODO [Core team]: What's new?
 
-# Publications and Preprints
+
+# Community and Impact
+
+## Publications and Preprints
 
 In October 2024, two notable preprints were published by Bioconductor contributors:
 
@@ -61,8 +64,6 @@ This preprint provides concise, practical advice for developing high-quality Bio
 - [Learning and teaching biological data science in the Bioconductor community](https://arxiv.org/abs/2410.01351)
 Authors: Bioconductor Training Committee and others.
 This preprint explores the Bioconductor community’s role in advancing biological data science education and training.
-
-# Community and Impact
 
 ## Outreachy Internships
 

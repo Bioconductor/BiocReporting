@@ -56,25 +56,24 @@ TODO [Core team]: What's new?
 
 Our participation in the May-August 2024 Outreachy Internship program was a success. Intern Scholastica Urua shared her journey working on the Microbiome Study Curation project, highlighting the value of open-source contributions and community engagement, in the blog post [here](https://blog.bioconductor.org/posts/2024-08-15-OutreachyInternshipExperience/).
 
+## Bioconductor Athena Award
+
+In July 2024, Beatriz Calvo-Serra was honoured as the inaugural recipient of the Bioconductor Athena Award. Beatriz was a passionate contributor to computational biology and an active member of the Bioconductor community. For more details, see this [blog post](https://blog.bioconductor.org/posts/2024-07-29-athena-award/).
 
 # Conferences
 
-## BioC2024 recap
+## BioC2024 Recap
 
 The annual BioC conference was held July 24-26 2024 at the Van Andel Institute in Grand Rapids, Michigan. Over 350 participants took part, with 116 attending in person and 240 joining virtually, allowing participants from regions as far away as Latin America, Africa, and Asia to be part of the event. This year’s conference also marked our first time in the Mid-West US, highlighting the expanding reach and diversity of our community. See recap blog post [here](
 https://blog.bioconductor.org/posts/2024-08-12-bioc2024-recap/)
 
-## EuroBioC2024 recap
+## EuroBioC2024 Recap
 
 The European Bioconductor Conference (EuroBioC2024), held in Oxford in September 2024, welcomed over 100 in-person attendees. Highlights included keynote talks and workshops. Community-driven events like EuroBioC continue to foster collaboration and innovation. See recap blog post [here](https://blog.bioconductor.org/posts/2024-09-20-eurobioc2024-recap/).
 
 ## BioCAsia 2024 Registration Open
 
 Registration for [BioCAsia 2024](https://biocasia2024.bioconductor.org/) is now open! The conference will take place on November 7–8, 2024, in Sydney, Australia, fostering collaboration among the bioinformatics community in the Asia-Pacific region. A Conference Access Award is available to assist presenters and participants with registration fees.
-
-# Bioconductor Athena Award
-
-In July 2024, Beatriz Calvo-Serra was honoured as the inaugural recipient of the Bioconductor Athena Award. Beatriz was a passionate contributor to computational biology and an active member of the Bioconductor community. For more details, see this [blog post](https://blog.bioconductor.org/posts/2024-07-29-athena-award/).
 
 
 # Boards and Working Groups Updates

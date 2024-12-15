@@ -37,7 +37,7 @@ nwkfl = 30
 nbooks = 5
 ```
 
-In May 2024, we announced the release of Bioconductor [3.19](https://bioconductor.org/news/bioc_3_19_release/). It is
+Bioconductor [3.19](https://bioconductor.org/news/bioc_3_19_release/), released in May 2024, is now available. It is
 compatible with R `r curR` and consists of `r nsoft` software packages, `r nexp`
 experiment data packages, `r nanno` up-to-date annotation packages, `r nwkfl`
 workflows, and `r nbooks` books. [Books](https://bioconductor.org/books/release/) are
