@@ -1,6 +1,6 @@
 ---
-title: "Bioconductor Notes, December 2024"
-date: "2024-12-31"
+title: "Bioconductor Notes, March 2024"
+date: "2024-03-31"
 abstract: >
   We discuss general project news.
 author:
@@ -29,15 +29,15 @@ core team and project activities.
 # Software
 
 ```{r lkdat,results="hide",echo=FALSE}
-curR = "4.4"
-nsoft = 2289
-nexp = 431
-nanno = 928
+curR = "4.3"
+nsoft = 2266
+nexp = 429
+nanno = 920
 nwkfl = 30
-nbooks = 5
+nbooks = 4
 ```
 
-Bioconductor [3.20](https://bioconductor.org/news/bioc_3_20_release/), released in October 2024, is now available. It is
+The current Bioconductor release is [3.18](https://bioconductor.org/news/bioc_3_18_release/). It is
 compatible with R `r curR` and consists of `r nsoft` software packages, `r nexp`
 experiment data packages, `r nanno` up-to-date annotation packages, `r nwkfl`
 workflows, and `r nbooks` books. [Books](https://bioconductor.org/books/release/) are
@@ -50,58 +50,46 @@ community-developed [Orchestrating Single-Cell Analysis with Bioconductor](https
 
 TODO [Core team]: What's new?
 
-# Publications and Preprints
+## Website Redesign
 
-In October 2024, two notable preprints were published by Bioconductor contributors:
-
-- [Eleven quick tips for writing a Bioconductor package](https://osf.io/preprints/osf/wxjky)
-Authors: Charlotte Soneson, Lori Shepherd, Marcel Ramos, Kevin Rue-Albrecht, Johannes Rainer, Hervé Pagès, and Vincent J. Carey (Bioconductor Core Team and collaborators).
-This preprint provides concise, practical advice for developing high-quality Bioconductor packages.
-
-- [Learning and teaching biological data science in the Bioconductor community](https://arxiv.org/abs/2410.01351)
-Authors: Bioconductor Training Committee and others.
-This preprint explores the Bioconductor community’s role in advancing biological data science education and training.
+In January 2024, we unveiled the new Bioconductor.org, featuring a cleaner design, improved accessibility, and reorganized content. This redesign, shaped by community feedback, aims to better serve our global users. Looking ahead, we have identified the need to enhance search functionalities and improve how Bioconductor content is structured and integrated to support advanced tools, including AI. Planning is underway, with development expected to begin in 2025, subject to grant outcomes. See [blog post]( https://blog.bioconductor.org/posts/2024-02-01-website-update/) for more details.
 
 # Community and Impact
 
+## Community Profile
+
+At the end of 2023, the Center for Scientific Collaboration and Community Engagement (CSCCE) published a Bioconductor Community Profile. This report highlights the impact of Bioconductor's first year of CZI EOSS 4 funding, providing insights into our community's structure, challenges, and successes. [Read the full profile here](https://zenodo.org/records/8400205).
+
 ## Outreachy Internships
 
-TODO[Jen]
+Bioconductor participated in the Outreachy Internship program for the December 2023 – March 2024 cohort. Interns Chioma Onyido, Ester Afuape, and Peace Sandy from Nigeria contributed to curating microbiome studies for BugSigDB. They also shared their experiences working on these projects and engaging with the Bioconductor community in a blog post, which you can read [here](https://blog.bioconductor.org/posts/2024-01-31-OutreachyInternshipJourney/).
 
-## ELIXIR BioHackathon Europe 2024
-Bioconductor participated in this collaborative event (November 4–8), held in Barcelona, to advance interoperability and innovation in life sciences. Key contributions included projects focused on EDAM-bio.tools and training infrastructure.
+## YERUN Open Science Award
 
-## Training Domain Launch
+In February 2024, the Bioconductor Community Advisory Board received the YERUN Open Science Award for advancing open-source software in biomedical research and promoting equitable access to genomic analysis tools. The €2,000 prize will fund a hackathon focused on AI-assisted translation of training materials. Learn more in the [UL article](https://www.ul.ie/research/news/university-of-limerick-researchers-win-european-award-for-commitment-to-open-science).
 
-Bioconductor is developing [training.bioconductor.org](https://training.bioconductor.org/), a centralised website for accessing and organising high-quality Bioconductor training materials. This work is still in progress, with the Training Committee actively discussing ways to restructure existing resources and improve their discoverability. A key focus is supporting community-driven tutorials and emphasising pedagogical quality to better serve learners.
+## Bioconductor Leaves Twitter/X
 
-## Bioconductor Carpentry Single-Cell Module
-
-Bioconductor now features an official [single-cell RNA sequencing (scRNA-seq) module](https://carpentries-incubator.github.io/bioc-scrnaseq/) in the Carpentries Incubator. This module, renamed from the Orchestrating Single-Cell Analysis (OSCA) curriculum, provides a structured introduction to scRNA-seq analysis with Bioconductor and is aimed at both learners and educators.
-
-## Bioconductor Joins Bluesky
-
-In October 2024, Bioconductor expanded its social media presence by joining Bluesky. This move reflects Bioconductor's commitment to engaging with its global community across diverse platforms. We invite you to [follow us](https://bsky.app/profile/bioconductor.bsky.social) to stay updated on the latest news, events, and community highlights.
+In December 2023, Bioconductor transitioned away from Twitter/X due to concerns about the platform's alignment with our [Code of Conduct](https://bioconductor.org/about/code-of-conduct/). The account is now archived, and we encourage the community to connect with us on platforms like Mastodon, LinkedIn, YouTube, Slack, and our mailing lists. Read the full announcement [here](https://blog.bioconductor.org/posts/2023-11-17-twitter-exit/).
 
 # Conferences
 
-## BioCAsia2024
-Held in Sydney, Australia (November 7–8), the Bioconductor Asia meeting fostered collaboration and knowledge sharing among regional and global Bioconductor users and developers. For more details, visit the [BioCAsia2024 website](https://biocasia2024.bioconductor.org/).
+## BioC2024 Announcement
 
-## Galaxy and Bioconductor Community Conference
-Announced in September 2024, the first Galaxy and Bioconductor Community Conference (GBCC 2025) is scheduled for June 23–26, 2025, at Cold Spring Harbor Laboratory, New York. The conference aims to showcase the integration of Galaxy and Bioconductor tools, promoting reproducible workflows and community-driven development. For more details, see the [blog post](https://blog.bioconductor.org/posts/2024-09-03-gbcc2025-announcement/).
+The annual Bioconductor Conference, BioC2024, will take place in Grand Rapids, Michigan, from July 24–26, 2024. This event will feature keynote talks, workshops, and opportunities for community engagement. For more details, visit the conference website [here](https://www.bioc2024.bioconductor.org/).
+
+## EuroBioC2024 Announcement
+
+The European Bioconductor Conference, EuroBioC2024, will be held in Oxford, UK, from September 4–6, 2024. Join us for discussions, tutorials, and networking with the Bioconductor community in Europe. More information is available [here](https://eurobioc2024.bioconductor.org/).
 
 
 # Boards and Working Groups Updates
 
-- The [Community Advisory Board](https://bioconductor.org/about/community-advisory-board/) (CAB) welcomes new members Zahraa Alsafwani, Jasmine Daly, Tobilola Ogunbowale, and Lluis Revilla. We extend our gratitude to outgoing members Daniela Cassol, Estefania Mancini, Jordana Muwanguzi, and Mike Smith for their service.
-
-- The [Technical Advisory Board](https://bioconductor.org/about/technical-advisory-board/) (TAB) welcomes new members Michael Lawrence and Jacques Serizay. Outgoing members Sean Davis and Michael Love are also warmly thanked for their contributions.
-
-
 If you are interested in becoming involved with any [Bioconductor working group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html) please contact the group leader(s).
 
-Updates?
+## EDAM Working Group Announcement
+
+Bioconductor has launched an [EDAM Working Group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#edam-collaboration) in collaboration with EDAM-bio.tools to improve the discoverability of Bioconductor packages through the EDAM ontology, a widely used bioinformatics vocabulary and classification system. This effort supports greater integration with communities beyond R and platforms like Galaxy and aligns with Bioconductor's mission of accessibility and interoperability. The group is submitting a proposal for the ELIXIR BioHackathon 2024, and invites interested contributors to join the discussion on the [Bioconductor Slack](https://slack.bioconductor.org) in the #edam-collaboration channel.
 
 
 # Using Bioconductor

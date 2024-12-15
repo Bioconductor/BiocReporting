@@ -1,6 +1,6 @@
 ---
-title: "Bioconductor Notes, December 2024"
-date: "2024-12-31"
+title: "Bioconductor Notes, June 2024"
+date: "2024-06-30"
 abstract: >
   We discuss general project news.
 author:
@@ -37,7 +37,7 @@ nwkfl = 30
 nbooks = 5
 ```
 
-Bioconductor [3.20](https://bioconductor.org/news/bioc_3_20_release/), released in October 2024, is now available. It is
+In May 2024, we announced the release of Bioconductor [3.19](https://bioconductor.org/news/bioc_3_19_release/). It is
 compatible with R `r curR` and consists of `r nsoft` software packages, `r nexp`
 experiment data packages, `r nanno` up-to-date annotation packages, `r nwkfl`
 workflows, and `r nbooks` books. [Books](https://bioconductor.org/books/release/) are
@@ -50,58 +50,42 @@ community-developed [Orchestrating Single-Cell Analysis with Bioconductor](https
 
 TODO [Core team]: What's new?
 
-# Publications and Preprints
-
-In October 2024, two notable preprints were published by Bioconductor contributors:
-
-- [Eleven quick tips for writing a Bioconductor package](https://osf.io/preprints/osf/wxjky)
-Authors: Charlotte Soneson, Lori Shepherd, Marcel Ramos, Kevin Rue-Albrecht, Johannes Rainer, Hervé Pagès, and Vincent J. Carey (Bioconductor Core Team and collaborators).
-This preprint provides concise, practical advice for developing high-quality Bioconductor packages.
-
-- [Learning and teaching biological data science in the Bioconductor community](https://arxiv.org/abs/2410.01351)
-Authors: Bioconductor Training Committee and others.
-This preprint explores the Bioconductor community’s role in advancing biological data science education and training.
 
 # Community and Impact
 
+## CZI EOSS6 Grants Announcement
+
+In June 2024, the Chan Zuckerberg Initiative (CZI) announced funding for five Bioconductor projects as part of the EOSS Cycle 6. These projects focus on advancing training accessibility, developer support, GPU computing, resource tagging with ontologies, and the expansion of Tidyomics tools. For more details on each project and its collaborators, see the blog post [here](https://blog.bioconductor.org/posts/2024-07-12-czi-eoss6-grants/).
+
+
+## CZI Open Science Meeting Highlights
+
+On June 12–14, 2024, Bioconductor members attended the Chan Zuckerberg Initiative (CZI) Open Science Meeting in Boston. This gathering provided an opportunity for current CZI Open Science grantees to connect and share their progress. Bioconductor was recognised as one of the top open-source software projects in the CZ Software Mentions dataset. For more details, see the blog post [here](https://blog.bioconductor.org/posts/2024-07-24-czi-os-meeting-highlights/).
+
 ## Outreachy Internships
 
-TODO[Jen]
+TODO [Jen]: Bioconductor will also participate in Outreachy's FIXME
+internship round to offer internships with Bioconductor community projects.
 
-## ELIXIR BioHackathon Europe 2024
-Bioconductor participated in this collaborative event (November 4–8), held in Barcelona, to advance interoperability and innovation in life sciences. Key contributions included projects focused on EDAM-bio.tools and training infrastructure.
+## CSAMA 2024: Biological Data Science Summer School
 
-## Training Domain Launch
-
-Bioconductor is developing [training.bioconductor.org](https://training.bioconductor.org/), a centralised website for accessing and organising high-quality Bioconductor training materials. This work is still in progress, with the Training Committee actively discussing ways to restructure existing resources and improve their discoverability. A key focus is supporting community-driven tutorials and emphasising pedagogical quality to better serve learners.
-
-## Bioconductor Carpentry Single-Cell Module
-
-Bioconductor now features an official [single-cell RNA sequencing (scRNA-seq) module](https://carpentries-incubator.github.io/bioc-scrnaseq/) in the Carpentries Incubator. This module, renamed from the Orchestrating Single-Cell Analysis (OSCA) curriculum, provides a structured introduction to scRNA-seq analysis with Bioconductor and is aimed at both learners and educators.
-
-## Bioconductor Joins Bluesky
-
-In October 2024, Bioconductor expanded its social media presence by joining Bluesky. This move reflects Bioconductor's commitment to engaging with its global community across diverse platforms. We invite you to [follow us](https://bsky.app/profile/bioconductor.bsky.social) to stay updated on the latest news, events, and community highlights.
+The 20th edition of [CSAMA (Computational Statistics for Biological Data Analysis) Summer School](https://csama2024.bioconductor.eu/) took place in Bressanone-Brixen, Italy, from June 23–28, 2024. This intensive course covered advanced analysis of molecular data using the R/Bioconductor ecosystem. Faculty included Robert Gentleman, co-founder of R and Bioconductor, and Vince Carey, current Bioconductor lead, highlighting Bioconductor's role in open-source training. 
 
 # Conferences
 
-## BioCAsia2024
-Held in Sydney, Australia (November 7–8), the Bioconductor Asia meeting fostered collaboration and knowledge sharing among regional and global Bioconductor users and developers. For more details, visit the [BioCAsia2024 website](https://biocasia2024.bioconductor.org/).
+## BioC2024 Reminder
 
-## Galaxy and Bioconductor Community Conference
-Announced in September 2024, the first Galaxy and Bioconductor Community Conference (GBCC 2025) is scheduled for June 23–26, 2025, at Cold Spring Harbor Laboratory, New York. The conference aims to showcase the integration of Galaxy and Bioconductor tools, promoting reproducible workflows and community-driven development. For more details, see the [blog post](https://blog.bioconductor.org/posts/2024-09-03-gbcc2025-announcement/).
+The annual Bioconductor Conference (BioC2024) is fast approaching! This year’s event will be held in Grand Rapids, Michigan, from July 24–26, 2024. Featuring keynote talks, interactive workshops, and ample opportunities for community engagement, BioC2024 is a must-attend event for Bioconductor users and developers alike. Visit the [conference website](https://www.bioc2024.bioconductor.org/) to register and learn more.
 
+## EuroBioC2024 Reminder
+
+Planning is well underway for EuroBioC2024, the European Bioconductor Conference, scheduled for September 4–6, 2024, in Oxford, UK. Like BioC2024, EuroBioC2024 will include keynote presentations, hands-on workshops, and plenty of opportunities for networking with members of the Bioconductor community. For details and updates, visit the [conference website](https://eurobioc2024.bioconductor.org/).
 
 # Boards and Working Groups Updates
 
-- The [Community Advisory Board](https://bioconductor.org/about/community-advisory-board/) (CAB) welcomes new members Zahraa Alsafwani, Jasmine Daly, Tobilola Ogunbowale, and Lluis Revilla. We extend our gratitude to outgoing members Daniela Cassol, Estefania Mancini, Jordana Muwanguzi, and Mike Smith for their service.
-
-- The [Technical Advisory Board](https://bioconductor.org/about/technical-advisory-board/) (TAB) welcomes new members Michael Lawrence and Jacques Serizay. Outgoing members Sean Davis and Michael Love are also warmly thanked for their contributions.
-
+TODO  - Updates?
 
 If you are interested in becoming involved with any [Bioconductor working group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html) please contact the group leader(s).
-
-Updates?
 
 
 # Using Bioconductor
