@@ -95,14 +95,17 @@ Announced in September 2024, the first Galaxy and Bioconductor Community Confere
 
 # Boards and Working Groups Updates
 
+## New Board Members
+
 - The [Community Advisory Board](https://bioconductor.org/about/community-advisory-board/) (CAB) welcomes new members Zahraa Alsafwani, Jasmine Daly, Tobilola Ogunbowale, and Lluis Revilla. We extend our gratitude to outgoing members Daniela Cassol, Estefania Mancini, Jordana Muwanguzi, and Mike Smith for their service.
 
 - The [Technical Advisory Board](https://bioconductor.org/about/technical-advisory-board/) (TAB) welcomes new members Michael Lawrence and Jacques Serizay. Outgoing members Sean Davis and Michael Love are also warmly thanked for their contributions.
 
+## Code of Conduct Committee Elections
+
+In October 2024, Bioconductor sought new members to join its Code of Conduct (CoC) Committee, which plays a vital role in maintaining the integrity and safety of our community. The CoC meets 3–4 times annually to address important issues. Applications are now closed, but you can learn more about the committee and its work on the Code of Conduct page.
 
 If you are interested in becoming involved with any [Bioconductor working group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html) please contact the group leader(s).
-
-Updates?
 
 
 # Using Bioconductor
