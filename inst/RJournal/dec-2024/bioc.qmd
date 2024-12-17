@@ -41,8 +41,7 @@ Bioconductor [3.20](https://bioconductor.org/news/bioc_3_20_release/), released 
 compatible with R `r curR` and consists of `r nsoft` software packages, `r nexp`
 experiment data packages, `r nanno` up-to-date annotation packages, `r nwkfl`
 workflows, and `r nbooks` books. [Books](https://bioconductor.org/books/release/) are
-built regularly from source and therefore fully
-reproducible; an example is the
+built regularly from source, ensuring full reproducibility; an example is the
 community-developed [Orchestrating Single-Cell Analysis with Bioconductor](https://bioconductor.org/books/release/OSCA/).
 
 
