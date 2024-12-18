@@ -42,11 +42,6 @@ In May 2024, Bioconductor [3.19](https://bioconductor.org/news/bioc_3_19_release
 \**Note: Bioconductor 3.20 was subsequently released in October 2024. For details on the latest release, visit the [Bioconductor website](https://bioconductor.org/news/).*
 
 
-# Core Team and Infrastructure Updates
-
-TODO [Core team]: What's new?
-
-
 # Community and Impact
 
 ## CZI EOSS6 Grants Announcement
@@ -58,10 +53,6 @@ In June 2024, the Chan Zuckerberg Initiative (CZI) announced funding for five Bi
 
 On June 12–14, 2024, Bioconductor members attended the Chan Zuckerberg Initiative (CZI) Open Science Meeting in Boston. This gathering provided an opportunity for current CZI Open Science grantees to connect and share their progress. Bioconductor was recognised as one of the top open-source software projects in the CZ Software Mentions dataset. For more details, see the blog post [here](https://blog.bioconductor.org/posts/2024-07-24-czi-os-meeting-highlights/).
 
-## Outreachy Internships
-
-TODO [Jen]: Bioconductor will also participate in Outreachy's FIXME
-internship round to offer internships with Bioconductor community projects.
 
 ## CSAMA 2024: Biological Data Science Summer School
 
@@ -76,12 +67,6 @@ The annual Bioconductor Conference (BioC2024) is fast approaching! This year’s
 ## EuroBioC2024 Reminder
 
 Planning is well underway for EuroBioC2024, the European Bioconductor Conference, scheduled for September 4–6, 2024, in Oxford, UK. Like BioC2024, EuroBioC2024 will include keynote presentations, hands-on workshops, and plenty of opportunities for networking with members of the Bioconductor community. For details and updates, visit the [conference website](https://eurobioc2024.bioconductor.org/).
-
-# Boards and Working Groups Updates
-
-TODO  - Updates?
-
-If you are interested in becoming involved with any [Bioconductor working group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html) please contact the group leader(s).
 
 
 # Using Bioconductor

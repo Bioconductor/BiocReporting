@@ -64,10 +64,6 @@ This preprint provides concise, practical advice for developing high-quality Bio
 Authors: Bioconductor Training Committee and others.
 This preprint explores the Bioconductor community’s role in advancing biological data science education and training.
 
-## Outreachy Internships
-
-TODO[Jen]
-
 ## ELIXIR BioHackathon Europe 2024
 Bioconductor participated in this collaborative event (November 4–8), held in Barcelona, to advance interoperability and innovation in life sciences. Key contributions included projects focused on EDAM-bio.tools and training infrastructure.
 
