@@ -17,10 +17,14 @@ Imports: tibble,
 	utils,
 	dplyr,
 	ggplot2,
+	gh,
 	httr,
-	lubridate, rorcid
+	lubridate,
+	purrr,
+	rorcid,
+	tibble
 Suggests: knitr, testthat
 LazyData: true
 VignetteBuilder: knitr
 biocViews: Infrastructure
-RoxygenNote: 7.2.1
+RoxygenNote: 7.3.2

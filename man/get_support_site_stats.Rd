@@ -5,7 +5,7 @@
 \title{gather support site statistics in an interval}
 \usage{
 get_support_site_stats(
-  base = "https://support.bioconductor.org/api/stats/date/",
+  base = .BASE_SUPPORT_SITE_URL,
   from = "2021/01/01/",
   to = "2021/12/31/"
 )
