@@ -265,6 +265,8 @@ summarize_account_activity <- function(
 
 # Print method for nice output
 
+#' @rdname commit_stats
+#'
 #' @export
 print.commit_summary <- function(x) {
     cat("\nR Development Activity Analysis\n")

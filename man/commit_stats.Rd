@@ -7,6 +7,7 @@
 \alias{repository_commits}
 \alias{repository_summary}
 \alias{summarize_account_activity}
+\alias{print.commit_summary}
 \title{Get and summarize repository statistics from GitHub}
 \usage{
 get_repositories(username, org, github_token = gh::gh_token())
@@ -38,6 +39,8 @@ summarize_account_activity(
   end_date,
   github_token = gh::gh_token()
 )
+
+\method{print}{commit_summary}(x)
 }
 \arguments{
 \item{username}{`character(1)` The GitHub username}
@@ -84,6 +87,7 @@ These functions allow the user to query the GitHub API and
 }
 \examples{
 if (interactive()) {
+    gitcreds::gitcreds_set()
     summarize_account_activity(
         username = "LiNk-NY",
         org = "waldronlab",
