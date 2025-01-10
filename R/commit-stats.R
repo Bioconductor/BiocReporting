@@ -298,7 +298,7 @@ summarize_account_activity <- function(
         repos, username = username, org = org,
         github_token = github_token
     )
-    if (!nrow(r_repos))
+    if (!length(repos))
         stop("No R package repositories found in 'username' / 'org' account")
     # Step 2B: (optional) Filter by GitHub repository topics
     if (length(topics))
@@ -307,7 +307,7 @@ summarize_account_activity <- function(
             github_token = github_token
         )
     # Step 2C: Convert repo list to tibble
-    r_repos <- repo_list_df(repo)
+    r_repos <- repo_list_df(repos)
     # Step 3: Fetch commits for each R repository
     commits_list <- repository_commits(
         repos_df = r_repos, username = username, org = org,
