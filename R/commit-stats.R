@@ -25,6 +25,7 @@
 #'     summarize_account_activity(
 #'         username = "LiNk-NY",
 #'         org = "waldronlab",
+#'         topics = "u24ca289073",
 #'         start_date = "2023-08-31",
 #'         end_date = "2024-09-01"
 #'     )
@@ -71,9 +72,9 @@ filter_r_repos <-
     function(repo_list, username, org, github_token = gh::gh_token())
 {
     message("Identifying R repositories...")
-    purrr::map_df(repo_list, function(repo, username, org, github_token) {
-        if (!missing(org))
-            username <- org
+    if (!missing(org))
+        username <- org
+    purrr::map(repo_list, function(repo) {
         languages <- gh::gh(
             "GET /repos/{owner}/{repo}/languages",
             owner = username,
@@ -81,6 +82,55 @@ filter_r_repos <-
             .token = github_token
         )
         if ("R" %in% names(languages)) {
+            repo$r_percentage <-
+                round(languages$R / sum(unlist(languages)) * 100, 1)
+            repo
+        }
+    }) |> purrr::compact()
+}
+
+#' @rdname commit_stats
+#'
+#' @param topics `character()` A vector of topics e.g., grant award numbers
+#'   (`u24ca######`) that are listed under "topics" on the GitHub repository
+#'   page
+#'
+#' @returns `filter_topic_repos`: A list of filtered repositories matching any
+#'   of the topics in the GitHub repository
+#'
+#' @export
+filter_topic_repos <-
+    function(repo_list, username, org, topics, github_token = gh::gh_token())
+{
+    message("Filtering by repository topics")
+    if (!missing(org))
+        username <- org
+    Filter(
+        function(repo) {
+            repo_topics <- gh::gh(
+                "GET /repos/{owner}/{repo}/topics",
+                owner = username,
+                repo = repo$name,
+                .token = github_token
+            ) |> unlist()
+            any(
+                tolower(topics) %in% tolower(repo_topics)
+            )
+        },
+        repo_list
+    )
+}
+
+#' @rdname commit_stats
+#'
+#' @returns `repo_list_df`: A `tibble` `data.frame` with rows corresponding to
+#'   repositories including a column of calculated percentage of R code
+#'
+#' @export
+repo_list_df <- function(repo_list) {
+    purrr::map_df(
+        repo_list,
+        function(repo) {
             tibble::tibble(
                 full_name = repo$full_name,
                 name = repo$name,
@@ -91,11 +141,10 @@ filter_r_repos <-
                 last_updated = repo$updated_at,
                 is_fork = repo$fork,
                 default_branch = repo$default_branch,
-                r_percentage =
-                    round(languages$R / sum(unlist(languages)) * 100, 1)
+                r_percentage = repo$r_percentage
             )
         }
-    }, username = username, org = org, github_token = github_token)
+    )
 }
 
 #' @rdname commit_stats
@@ -233,6 +282,7 @@ repository_summary <- function(
 summarize_account_activity <- function(
     username,
     org,
+    topics,
     start_date,
     end_date,
     github_token = gh::gh_token()
@@ -243,12 +293,21 @@ summarize_account_activity <- function(
     repos <- get_repositories(
         username = username, org = org, github_token = github_token
     )
-    # Step 2: Filter for R repositories
-    r_repos <- filter_r_repos(
-        repos, username = username, org = org, github_token = github_token
+    # Step 2A: Filter for R repositories
+    repos <- filter_r_repos(
+        repos, username = username, org = org,
+        github_token = github_token
     )
     if (!nrow(r_repos))
         stop("No R package repositories found in 'username' / 'org' account")
+    # Step 2B: (optional) Filter by GitHub repository topics
+    if (length(topics))
+        repos <- filter_topic_repos(
+            repos, username = username, org = org, topics = topics,
+            github_token = github_token
+        )
+    # Step 2C: Convert repo list to tibble
+    r_repos <- repo_list_df(repo)
     # Step 3: Fetch commits for each R repository
     commits_list <- repository_commits(
         repos_df = r_repos, username = username, org = org,

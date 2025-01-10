@@ -4,6 +4,8 @@
 \alias{commit_stats}
 \alias{get_repositories}
 \alias{filter_r_repos}
+\alias{filter_topic_repos}
+\alias{repo_list_df}
 \alias{repository_commits}
 \alias{repository_summary}
 \alias{summarize_account_activity}
@@ -13,6 +15,16 @@
 get_repositories(username, org, github_token = gh::gh_token())
 
 filter_r_repos(repo_list, username, org, github_token = gh::gh_token())
+
+filter_topic_repos(
+  repo_list,
+  username,
+  org,
+  topics,
+  github_token = gh::gh_token()
+)
+
+repo_list_df(repo_list)
 
 repository_commits(
   repos_df,
@@ -35,6 +47,7 @@ repository_summary(
 summarize_account_activity(
   username,
   org,
+  topics,
   start_date,
   end_date,
   github_token = gh::gh_token()
@@ -53,6 +66,10 @@ By default, `gh::gh_token()` is used.}
 
 \item{repo_list}{`list` A list as obtained from `get_repositories`}
 
+\item{topics}{`character()` A vector of topics e.g., grant award numbers
+(`u24ca######`) that are listed under "topics" on the GitHub repository
+page}
+
 \item{repos_df}{`tibble` A tibble of filtered R repositories as obtained from
 `filter_r_repos`}
 
@@ -67,6 +84,12 @@ commit details for each repository}
   account or organization
 
 `filter_r_repos`: A list of filtered repositories containing R code
+
+`filter_topic_repos`: A list of filtered repositories matching any
+  of the topics in the GitHub repository
+
+`repo_list_df`: A `tibble` `data.frame` with rows corresponding to
+  repositories including a column of calculated percentage of R code
 
 `repository_commits`: A `list` of commits for each row in the
   `repos_df` input
@@ -91,6 +114,7 @@ if (interactive()) {
     summarize_account_activity(
         username = "LiNk-NY",
         org = "waldronlab",
+        topics = "u24ca289073",
         start_date = "2023-08-31",
         end_date = "2024-09-01"
     )
