@@ -2,6 +2,7 @@
 
 S3method(print,bioc_support_stats)
 S3method(print,commit_summary)
+export(commits_summary)
 export(filter_r_repos)
 export(filter_topic_repos)
 export(get_repositories)

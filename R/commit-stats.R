@@ -67,6 +67,25 @@ get_repositories <- function(username, org, github_token = gh::gh_token()) {
 #'
 #' @returns `filter_r_repos`: A list of filtered repositories containing R code
 #'
+#' @examples
+#' if (interactive()) {
+#'     username <- "LiNk-NY"
+#'     org <- "waldronlab"
+#'     all_repos <- get_repositories(username, org)
+#'     r_repos <- filter_r_repos(all_repos, username, org)
+#'     grant_repos <-
+#'         filter_topic_repos(r_repos, username, org, "u24ca289073")
+#'     repo_df <- repo_list_df(grant_repos)
+#'     repo_commits <- repository_commits(
+#'         repo_df, username, org,
+#'         start_date = "2023-08-31", end_date = "2024-09-01"
+#'     )
+#'     commits_log <- commits_summary(repo_commits, repo_df)
+#'     repository_summary(
+#'         repo_commits, commits_log, username, org,
+#'         start_date = "2023-08-31", end_date = "2024-09-01"
+#'     )
+#' }
 #' @export
 filter_r_repos <-
     function(repo_list, username, org, github_token = gh::gh_token())
@@ -173,7 +192,6 @@ repository_commits <- function(
         commits <- tryCatch({
             gh::gh(
                 "GET /repos/{owner}/{repo}/commits",
-                author = username,
                 owner = org,
                 repo = repos_df$name[i],
                 since = start_date,
@@ -214,6 +232,42 @@ repository_commits <- function(
         all_commits <- c(all_commits, repo_commits)
     }
     all_commits
+}
+
+#' @rdname commit_stats
+#'
+#' @returns `commits_summary`: A `data.frame` of repositories and their
+#'   statistics including a concatenation of all commit messages (in the
+#'   `commit_log` column)
+#'
+#' @export
+commits_summary <- function(commits_list, repos_df) {
+    repo_list <- split(
+        commits_list, sapply(commits_list, function(x) x$repository)
+    )
+    summary <- lapply(repo_list, function(repo) {
+        paste(
+            "\n\n----", unique(map_chr(repo, function(x) x$repository)), ":\n",
+            paste(
+                Filter(
+                    nchar,
+                    map_chr(repo, function(x) {
+                        if (
+                            startsWith(x$message, "version bump") ||
+                            startsWith(x$message, "bump x.y.z")
+                        )
+                            character(1L)
+                        else
+                            paste0(
+                                gsub("\n", "", x$message), " (", x$author, ")"
+                            )
+                    })
+                ), collapse = "\n"
+            )
+        )
+    }) |> stack()
+    names(summary) <- c("commit_log", "org_repo")
+    merge(repo_df, summary, by.x = "full_name", by.y = "org_repo")
 }
 
 #' @rdname commit_stats
