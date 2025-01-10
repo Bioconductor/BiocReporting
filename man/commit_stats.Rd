@@ -7,6 +7,7 @@
 \alias{filter_topic_repos}
 \alias{repo_list_df}
 \alias{repository_commits}
+\alias{commits_summary}
 \alias{repository_summary}
 \alias{summarize_account_activity}
 \alias{print.commit_summary}
@@ -34,6 +35,8 @@ repository_commits(
   start_date,
   end_date
 )
+
+commits_summary(commits_list, repos_df)
 
 repository_summary(
   commits_list,
@@ -94,6 +97,10 @@ commit details for each repository}
 `repository_commits`: A `list` of commits for each row in the
   `repos_df` input
 
+`commits_summary`: A `data.frame` of repositories and their
+  statistics including a concatenation of all commit messages (in the
+  `commit_log` column)
+
 `repository_summary`: A `list` of `tibbles` that summarize activity
   in the associated `repositories` for the `username` / `org` account
 
@@ -117,6 +124,24 @@ if (interactive()) {
         topics = "u24ca289073",
         start_date = "2023-08-31",
         end_date = "2024-09-01"
+    )
+}
+if (interactive()) {
+    username <- "LiNk-NY"
+    org <- "waldronlab"
+    all_repos <- get_repositories(username, org)
+    r_repos <- filter_r_repos(all_repos, username, org)
+    grant_repos <-
+        filter_topic_repos(r_repos, username, org, "u24ca289073")
+    repo_df <- repo_list_df(grant_repos)
+    repo_commits <- repository_commits(
+        repo_df, username, org,
+        start_date = "2023-08-31", end_date = "2024-09-01"
+    )
+    commits_log <- commits_summary(repo_commits, repo_df)
+    repository_summary(
+        repo_commits, commits_log, username, org,
+        start_date = "2023-08-31", end_date = "2024-09-01"
     )
 }
 }
