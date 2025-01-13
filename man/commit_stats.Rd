@@ -119,6 +119,7 @@ These functions allow the user to query the GitHub API and
 }
 \examples{
 if (interactive()) {
+    ## summarize overall activity for an account
     gitcreds::gitcreds_set()
     summarize_commit_activity(
         username = "LiNk-NY",
@@ -127,8 +128,8 @@ if (interactive()) {
         start_date = "2023-08-31",
         end_date = "2024-09-01"
     )
-}
-if (interactive()) {
+
+    ## select only certain repositories for analysis
     slugs <- c(
         "vjcitn/TxRegInfra2",
         "vjcitn/BiocOncoTK",
@@ -136,8 +137,9 @@ if (interactive()) {
         "vjcitn/xenLite"
     )
     select_repositories(repo_slugs = slugs)
-}
-if (interactive()) {
+
+    ## common workflow using helper functions
+    ## (alternative to summarize_commit_activity)
     username <- "LiNk-NY"
     org <- "waldronlab"
     all_repos <- account_repositories(username, org)
