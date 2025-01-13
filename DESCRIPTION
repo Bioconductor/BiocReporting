@@ -13,16 +13,17 @@ Description: Reporting for Bioconductor
 License: Artistic-2.0
 Encoding: UTF-8
 Depends: R (>= 3.6), dplyr
-Imports: tibble,
-	utils,
-	dplyr,
-	ggplot2,
-	gh,
-	httr,
-	lubridate,
-	purrr,
-	rorcid,
-	tibble
+Imports:
+    BiocBaseUtils,
+    dplyr,
+    ggplot2,
+    gh,
+    httr,
+    lubridate,
+    purrr,
+    rorcid,
+    tibble,
+    utils
 Suggests: knitr, testthat
 LazyData: true
 VignetteBuilder: knitr
