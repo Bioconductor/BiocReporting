@@ -21,6 +21,7 @@
 #'
 #' @examples
 #' if (interactive()) {
+#'     ## summarize overall activity for an account
 #'     gitcreds::gitcreds_set()
 #'     summarize_commit_activity(
 #'         username = "LiNk-NY",
@@ -28,6 +29,34 @@
 #'         topics = "u24ca289073",
 #'         start_date = "2023-08-31",
 #'         end_date = "2024-09-01"
+#'     )
+#'
+#'     ## select only certain repositories for analysis
+#'     slugs <- c(
+#'         "vjcitn/TxRegInfra2",
+#'         "vjcitn/BiocOncoTK",
+#'         "vjcitn/YESCDS",
+#'         "vjcitn/xenLite"
+#'     )
+#'     select_repositories(repo_slugs = slugs)
+#'
+#'     ## common workflow using helper functions
+#'     ## (alternative to summarize_commit_activity)
+#'     username <- "LiNk-NY"
+#'     org <- "waldronlab"
+#'     all_repos <- account_repositories(username, org)
+#'     r_repos <- filter_r_repos(all_repos, username, org)
+#'     grant_repos <-
+#'         filter_topic_repos(r_repos, username, org, "u24ca289073")
+#'     repo_df <- repo_list_df(grant_repos)
+#'     repo_commits <- repository_commits(
+#'         repo_df,
+#'         start_date = "2023-08-31", end_date = "2024-09-01"
+#'     )
+#'     commits_log <- commits_summary(repo_commits, repo_df)
+#'     repository_summary(
+#'         repo_commits, commits_log,
+#'         start_date = "2023-08-31", end_date = "2024-09-01"
 #'     )
 #' }
 #' @export
@@ -71,16 +100,6 @@ account_repositories <- function(username, org, github_token = gh::gh_token()) {
 #'
 #' @importFrom BiocBaseUtils isCharacter
 #'
-#' @examples
-#' if (interactive()) {
-#'     slugs <- c(
-#'         "vjcitn/TxRegInfra2",
-#'         "vjcitn/BiocOncoTK",
-#'         "vjcitn/YESCDS",
-#'         "vjcitn/xenLite"
-#'     )
-#'     select_repositories(repo_slugs = slugs)
-#' }
 #' @export
 select_repositories <- function(repo_slugs, github_token = gh::gh_token()) {
     stopifnot(isCharacter(repo_slugs))
@@ -107,25 +126,6 @@ select_repositories <- function(repo_slugs, github_token = gh::gh_token()) {
 #'
 #' @returns `filter_r_repos`: A list of filtered repositories containing R code
 #'
-#' @examples
-#' if (interactive()) {
-#'     username <- "LiNk-NY"
-#'     org <- "waldronlab"
-#'     all_repos <- account_repositories(username, org)
-#'     r_repos <- filter_r_repos(all_repos, username, org)
-#'     grant_repos <-
-#'         filter_topic_repos(r_repos, username, org, "u24ca289073")
-#'     repo_df <- repo_list_df(grant_repos)
-#'     repo_commits <- repository_commits(
-#'         repo_df,
-#'         start_date = "2023-08-31", end_date = "2024-09-01"
-#'     )
-#'     commits_log <- commits_summary(repo_commits, repo_df)
-#'     repository_summary(
-#'         repo_commits, commits_log,
-#'         start_date = "2023-08-31", end_date = "2024-09-01"
-#'     )
-#' }
 #' @export
 filter_r_repos <-
     function(repo_list, username, org, github_token = gh::gh_token())
