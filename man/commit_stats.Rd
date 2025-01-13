@@ -83,7 +83,7 @@ commit details for each repository}
 }
 \value{
 `account_repositories`: A list of repositories for the corresponding
-  account or organization
+  account or organization using the `gh` package.
 
 `select_repositories`: A list of repository metadata as obtained by
   `"GET /repos/{owner}/{repo}"` GitHub API endpoint using the `gh` package.
@@ -116,6 +116,18 @@ These functions allow the user to query the GitHub API and
   repository. The main workhorse function is `summarize_commit_activity`
   which calls all other functions internally to produce a summary of GitHub R
   repository activity.
+}
+\details{
+The main function `summarize_commit_activity` calls most of all the
+  other helper functions to obtain a list of repository and commit summaries
+  for a specified date range. Note that `account_repositories` works at the
+  organization or user level by querying all of the repositories in the user
+  or organization account. `select_repositories` on the other hand, allows
+  the user to specify a character vector of owner and repository
+  combinations, e.g., "owner/repo".
+
+  Functions such as `filter_r_repos` and `filter_topic_repos` are utilities
+  to allow filtering of repositories by certain criteria.
 }
 \examples{
 if (interactive()) {
