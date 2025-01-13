@@ -267,7 +267,7 @@ commits_summary <- function(commits_list, repos_df) {
         )
     }) |> stack()
     names(summary) <- c("commit_log", "org_repo")
-    merge(repo_df, summary, by.x = "full_name", by.y = "org_repo")
+    merge(repos_df, summary, by.x = "full_name", by.y = "org_repo")
 }
 
 #' @rdname commit_stats
