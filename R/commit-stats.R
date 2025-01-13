@@ -16,7 +16,7 @@
 #' @param github_token `gh_pat` The personal access token obtained from GitHub.
 #'   By default, `gh::gh_token()` is used.
 #'
-#' @returns `get_repositories`: A list of repositories for the corresponding
+#' @returns `account_repositories`: A list of repositories for the corresponding
 #'   account or organization
 #'
 #' @examples
@@ -31,7 +31,7 @@
 #'     )
 #' }
 #' @export
-get_repositories <- function(username, org, github_token = gh::gh_token()) {
+account_repositories <- function(username, org, github_token = gh::gh_token()) {
     message("Finding repositories for ", username, "...")
     repos <- list()
     page <- 1
@@ -63,7 +63,37 @@ get_repositories <- function(username, org, github_token = gh::gh_token()) {
 
 #' @rdname commit_stats
 #'
-#' @param repo_list `list` A list as obtained from `get_repositories`
+#' @param repo_slugs `character()` A vector of owner and repository strings
+#'   collapsed by the forward slash, e.g., "owner/repo"
+#'
+#' @returns `select_repositories`: A list of repository metadata as obtained by
+#'   `"GET /repos/{owner}/{repo}"` GitHub API endpoint using the `gh` package.
+#'
+#' @importFrom BiocBaseUtils isCharacter
+#'
+#' @export
+select_repositories <- function(repo_slugs, github_token = gh::gh_token()) {
+    stopifnot(isCharacter(repo_slugs))
+    owners_repos <- strsplit(repo_slugs, "/")
+    lapply(
+        owners_repos, function(ownerrepo) {
+            owner <- ownerrepo[1L]
+            repo <- ownerrepo[2L]
+            message("Fetching ", owner, "/", repo, "...")
+            gh::gh(
+                "GET /repos/{owner}/{repo}",
+                owner = owner,
+                repo = repo,
+                .token = github_token
+            )
+        }
+    )
+}
+
+#' @rdname commit_stats
+#'
+#' @param repo_list `list` A list as obtained from `account_repositories` or
+#'   `select_repositories`
 #'
 #' @returns `filter_r_repos`: A list of filtered repositories containing R code
 #'
@@ -71,7 +101,7 @@ get_repositories <- function(username, org, github_token = gh::gh_token()) {
 #' if (interactive()) {
 #'     username <- "LiNk-NY"
 #'     org <- "waldronlab"
-#'     all_repos <- get_repositories(username, org)
+#'     all_repos <- account_repositories(username, org)
 #'     r_repos <- filter_r_repos(all_repos, username, org)
 #'     grant_repos <-
 #'         filter_topic_repos(r_repos, username, org, "u24ca289073")
@@ -153,6 +183,7 @@ repo_list_df <- function(repo_list) {
             tibble::tibble(
                 full_name = repo$full_name,
                 name = repo$name,
+                owner = repo[[c("owner", "login")]],
                 description =
                     ifelse(is.null(repo$description), NA, repo$description),
                 stars = repo$stargazers_count,
@@ -179,20 +210,18 @@ repo_list_df <- function(repo_list) {
 #'
 #' @export
 repository_commits <- function(
-    repos_df, username, org, github_token = gh::gh_token(),
+    repos_df, github_token = gh::gh_token(),
     start_date, end_date
 ) {
     message("Fetching commits for ", nrow(repos_df), " R repositories...")
     all_commits <- list()
-    if (missing(org))
-        org <- username
     for (i in seq_len(nrow(repos_df))) {
         repo <- repos_df$full_name[i]
         message("Processing ", repo, " (", i, "/", nrow(repos_df), ")")
         commits <- tryCatch({
             gh::gh(
                 "GET /repos/{owner}/{repo}/commits",
-                owner = org,
+                owner = repos_df$owner[i],
                 repo = repos_df$name[i],
                 since = start_date,
                 until = end_date,
@@ -212,7 +241,7 @@ repository_commits <- function(
                 changes = tryCatch({
                     commit_detail <- gh::gh(
                         "GET /repos/{owner}/{repo}/commits/{sha}",
-                        owner = org,
+                        owner = repos_df$owner[i],
                         repo = repos_df$name[i],
                         sha = commit$sha,
                         since = start_date,
@@ -280,10 +309,8 @@ commits_summary <- function(commits_list, repos_df) {
 #'
 #' @export
 repository_summary <- function(
-    commits_list, repositories, username, org, start_date, end_date
+    commits_list, repositories, start_date, end_date
 ) {
-    if (missing(org))
-        org <- username
     commit_stats <- tibble::tibble(
         repository = map_chr(commits_list, "repository"),
         author = map_chr(commits_list, "author"),
@@ -303,8 +330,8 @@ repository_summary <- function(
             total_files_changed = sum(files_changed, na.rm = TRUE)
         )
     summary <- list(
-        account_info = tibble::tibble(
-            name = username, org = org, start = start_date, end = end_date
+        time_period = tibble::tibble(
+            start = start_date, end = end_date
         ),
         repositories = repositories,
         repository_stats = repo_summary,
@@ -336,6 +363,7 @@ repository_summary <- function(
 summarize_account_activity <- function(
     username,
     org,
+    repo_slugs,
     topics,
     start_date,
     end_date,
@@ -344,9 +372,14 @@ summarize_account_activity <- function(
     start_date <- as.POSIXct(start_date) |> format("%Y-%m-%dT%H:%M:%SZ")
     end_date <- as.POSIXct(end_date) |> format("%Y-%m-%dT%H:%M:%SZ")
     # Step 1: Find all repositories for the account
-    repos <- get_repositories(
-        username = username, org = org, github_token = github_token
-    )
+    if (!missing(repo_slugs))
+        repos <- select_repositories(
+            repo_slugs = repo_slugs, github_token = github_token
+        )
+    else
+        repos <- account_repositories(
+            username = username, org = org, github_token = github_token
+        )
     # Step 2A: Filter for R repositories
     repos <- filter_r_repos(
         repos, username = username, org = org,
@@ -384,11 +417,8 @@ summarize_account_activity <- function(
 print.commit_summary <- function(x) {
     cat("\nR Development Activity Analysis\n")
     cat("============================\n")
-    cat("Username:",x$account_info$name, "\n")
-    if (length(x$account_info$org))
-        cat("Org:", x$account_info$org, "\n")
     cat(
-        "Period:", x$account_info$start, "to", x$account_info$end, "\n\n"
+        "Period:", x$time_period$start, "to", x$time_period$end, "\n\n"
     )
     cat("Overall Statistics:\n")
     cat(sprintf("- R Repositories: %d\n", x$overall_stats$total_repositories))
