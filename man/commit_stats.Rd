@@ -2,7 +2,8 @@
 % Please edit documentation in R/commit-stats.R
 \name{commit_stats}
 \alias{commit_stats}
-\alias{get_repositories}
+\alias{account_repositories}
+\alias{select_repositories}
 \alias{filter_r_repos}
 \alias{filter_topic_repos}
 \alias{repo_list_df}
@@ -13,7 +14,9 @@
 \alias{print.commit_summary}
 \title{Get and summarize repository statistics from GitHub}
 \usage{
-get_repositories(username, org, github_token = gh::gh_token())
+account_repositories(username, org, github_token = gh::gh_token())
+
+select_repositories(repo_slugs, github_token = gh::gh_token())
 
 filter_r_repos(repo_list, username, org, github_token = gh::gh_token())
 
@@ -29,8 +32,6 @@ repo_list_df(repo_list)
 
 repository_commits(
   repos_df,
-  username,
-  org,
   github_token = gh::gh_token(),
   start_date,
   end_date
@@ -38,18 +39,12 @@ repository_commits(
 
 commits_summary(commits_list, repos_df)
 
-repository_summary(
-  commits_list,
-  repositories,
-  username,
-  org,
-  start_date,
-  end_date
-)
+repository_summary(commits_list, repositories, start_date, end_date)
 
 summarize_account_activity(
   username,
   org,
+  repo_slugs,
   topics,
   start_date,
   end_date,
@@ -67,7 +62,11 @@ search repositories for.}
 \item{github_token}{`gh_pat` The personal access token obtained from GitHub.
 By default, `gh::gh_token()` is used.}
 
-\item{repo_list}{`list` A list as obtained from `get_repositories`}
+\item{repo_slugs}{`character()` A vector of owner and repository strings
+collapsed by the forward slash, e.g., "owner/repo"}
+
+\item{repo_list}{`list` A list as obtained from `account_repositories` or
+`select_repositories`}
 
 \item{topics}{`character()` A vector of topics e.g., grant award numbers
 (`u24ca######`) that are listed under "topics" on the GitHub repository
@@ -83,8 +82,11 @@ commit searches in the `YYYY-MM-DD` format}
 commit details for each repository}
 }
 \value{
-`get_repositories`: A list of repositories for the corresponding
+`account_repositories`: A list of repositories for the corresponding
   account or organization
+
+`select_repositories`: A list of repository metadata as obtained by
+  `"GET /repos/{owner}/{repo}"` GitHub API endpoint using the `gh` package.
 
 `filter_r_repos`: A list of filtered repositories containing R code
 
@@ -129,7 +131,7 @@ if (interactive()) {
 if (interactive()) {
     username <- "LiNk-NY"
     org <- "waldronlab"
-    all_repos <- get_repositories(username, org)
+    all_repos <- account_repositories(username, org)
     r_repos <- filter_r_repos(all_repos, username, org)
     grant_repos <-
         filter_topic_repos(r_repos, username, org, "u24ca289073")
