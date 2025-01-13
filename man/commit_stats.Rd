@@ -129,6 +129,15 @@ if (interactive()) {
     )
 }
 if (interactive()) {
+    slugs <- c(
+        "vjcitn/TxRegInfra2",
+        "vjcitn/BiocOncoTK",
+        "vjcitn/YESCDS",
+        "vjcitn/xenLite"
+    )
+    select_repositories(repo_slugs = slugs)
+}
+if (interactive()) {
     username <- "LiNk-NY"
     org <- "waldronlab"
     all_repos <- account_repositories(username, org)
@@ -137,12 +146,12 @@ if (interactive()) {
         filter_topic_repos(r_repos, username, org, "u24ca289073")
     repo_df <- repo_list_df(grant_repos)
     repo_commits <- repository_commits(
-        repo_df, username, org,
+        repo_df,
         start_date = "2023-08-31", end_date = "2024-09-01"
     )
     commits_log <- commits_summary(repo_commits, repo_df)
     repository_summary(
-        repo_commits, commits_log, username, org,
+        repo_commits, commits_log,
         start_date = "2023-08-31", end_date = "2024-09-01"
     )
 }
