@@ -10,7 +10,7 @@
 \alias{repository_commits}
 \alias{commits_summary}
 \alias{repository_summary}
-\alias{summarize_account_activity}
+\alias{summarize_commit_activity}
 \alias{print.commit_summary}
 \title{Get and summarize repository statistics from GitHub}
 \usage{
@@ -41,7 +41,7 @@ commits_summary(commits_list, repos_df)
 
 repository_summary(commits_list, repositories, start_date, end_date)
 
-summarize_account_activity(
+summarize_commit_activity(
   username,
   org,
   repo_slugs,
@@ -106,21 +106,21 @@ commit details for each repository}
 `repository_summary`: A `list` of `tibbles` that summarize activity
   in the associated `repositories` for the `username` / `org` account
 
-`summarize_account_activity`: A `list` of `tibbles` that summarize
+`summarize_commit_activity`: A `list` of `tibbles` that summarize
   activity in the associated `repositories` for the `username` / `org`
   account
 }
 \description{
 These functions allow the user to query the GitHub API and
   produce a comprehensive summary of commit activity for each R package
-  repository. The main workhorse function is `summarize_account_activity`
+  repository. The main workhorse function is `summarize_commit_activity`
   which calls all other functions internally to produce a summary of GitHub R
   repository activity.
 }
 \examples{
 if (interactive()) {
     gitcreds::gitcreds_set()
-    summarize_account_activity(
+    summarize_commit_activity(
         username = "LiNk-NY",
         org = "waldronlab",
         topics = "u24ca289073",
