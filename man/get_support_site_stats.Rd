@@ -2,7 +2,7 @@
 % Please edit documentation in R/support-site-stats.R
 \name{get_support_site_stats}
 \alias{get_support_site_stats}
-\title{gather support site statistics in an interval}
+\title{Gather support site statistics in an interval}
 \usage{
 get_support_site_stats(
   base = .BASE_SUPPORT_SITE_URL,
@@ -21,7 +21,7 @@ get_support_site_stats(
 list with components userdiff, toplevdiff, questdiff, respdiff
 }
 \description{
-gather support site statistics in an interval
+Gather support site statistics in an interval
 }
 \examples{
 get_support_site_stats()
