@@ -2,8 +2,11 @@
 % Please edit documentation in R/orcid_table.R
 \name{orcid_table}
 \alias{orcid_table}
+\alias{get_orcid_employments}
 \title{Mine employment data from ORCID}
 \usage{
+get_orcid_employments(orcid_id)
+
 orcid_table(orcids, rename = TRUE)
 }
 \arguments{
@@ -22,6 +25,7 @@ The function uses fields returned by API using `rorcid` package
   (last update on Oct. 2022)
 }
 \examples{
+get_orcid_employments(orcid_id = "0000-0003-4046-0063")
 if (interactive()) {
     ## need a token?
     oids <- c("0000-0003-4046-0063", "0000-0003-4046-0063")
