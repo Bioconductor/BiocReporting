@@ -435,8 +435,8 @@ summarize_commit_activity <- function(
 
 #' @rdname commit_stats
 #'
-#' @export
-print.commit_summary <- function(x) {
+#' @exportS3Method base::print
+print.commit_summary <- function(x, ...) {
     cat("\nR Development Activity Analysis\n")
     cat("============================\n")
     cat(

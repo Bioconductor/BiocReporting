@@ -11,7 +11,8 @@
 #'
 #' @param to character(1) date in format ("YYYY/MM/DD/")
 #'
-#' @return list with components userdiff, toplevdiff, questdiff, respdiff
+#' @returns `get_support_site_stats`: list with components userdiff, toplevdiff,
+#'   questdiff, respdiff
 #'
 #' @examples
 #' get_support_site_stats()
@@ -36,8 +37,11 @@ get_support_site_stats <-
     stats
 }
 
-#' show a report on support site usage
-#' @export
+#' @rdname get_support_site_stats
+#'
+#' @returns `print.bioc_support_stats`: show a report on support site usage
+#'
+#' @exportS3Method base::print
 print.bioc_support_stats = function(x, ...) {
     cat("Bioconductor support site usage increments.\n")
     cat(sprintf("  From %s to %s : \n", x$from, x$to))

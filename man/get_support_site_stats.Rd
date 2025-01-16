@@ -2,6 +2,7 @@
 % Please edit documentation in R/support-site-stats.R
 \name{get_support_site_stats}
 \alias{get_support_site_stats}
+\alias{print.bioc_support_stats}
 \title{Gather support site statistics in an interval}
 \usage{
 get_support_site_stats(
@@ -9,6 +10,8 @@ get_support_site_stats(
   from = "2021/01/01/",
   to = "2021/12/31/"
 )
+
+\method{print}{bioc_support_stats}(x, ...)
 }
 \arguments{
 \item{base}{character(1) URL}
@@ -18,7 +21,10 @@ get_support_site_stats(
 \item{to}{character(1) date in format ("YYYY/MM/DD/")}
 }
 \value{
-list with components userdiff, toplevdiff, questdiff, respdiff
+`get_support_site_stats`: list with components userdiff, toplevdiff,
+  questdiff, respdiff
+
+`print.bioc_support_stats`: show a report on support site usage
 }
 \description{
 Gather support site statistics in an interval

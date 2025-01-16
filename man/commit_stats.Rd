@@ -51,7 +51,7 @@ summarize_commit_activity(
   github_token = gh::gh_token()
 )
 
-\method{print}{commit_summary}(x)
+\method{print}{commit_summary}(x, ...)
 }
 \arguments{
 \item{username}{`character(1)` The GitHub username}
