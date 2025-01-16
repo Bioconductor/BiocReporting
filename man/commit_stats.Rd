@@ -164,9 +164,11 @@ if (interactive()) {
         start_date = "2023-08-31", end_date = "2024-09-01"
     )
     commits_log <- commits_summary(repo_commits, repo_df)
-    repository_summary(
+    summary <- repository_summary(
         repo_commits, commits_log,
         start_date = "2023-08-31", end_date = "2024-09-01"
     )
+    commits_log <-
+        commits_summary(summary$commits_list, summary$repositories)
 }
 }

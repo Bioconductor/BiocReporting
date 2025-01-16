@@ -65,10 +65,12 @@
 #'         start_date = "2023-08-31", end_date = "2024-09-01"
 #'     )
 #'     commits_log <- commits_summary(repo_commits, repo_df)
-#'     repository_summary(
+#'     summary <- repository_summary(
 #'         repo_commits, commits_log,
 #'         start_date = "2023-08-31", end_date = "2024-09-01"
 #'     )
+#'     commits_log <-
+#'         commits_summary(summary$commits_list, summary$repositories)
 #' }
 #' @export
 account_repositories <- function(username, org, github_token = gh::gh_token()) {
@@ -364,7 +366,8 @@ repository_summary <- function(
             total_additions = sum(commit_stats$additions, na.rm = TRUE),
             total_deletions = sum(commit_stats$deletions, na.rm = TRUE),
             total_files_changed = sum(commit_stats$files_changed, na.rm = TRUE)
-        )
+        ),
+        commits_list = commits_list
     )
     class(summary) <- c("commit_summary", class(summary))
     summary
@@ -418,14 +421,12 @@ summarize_commit_activity <- function(
     r_repos <- repo_list_df(repos)
     # Step 3: Fetch commits for each R repository
     commits_list <- repository_commits(
-        repos_df = r_repos, username = username, org = org,
-        github_token = github_token,
+        repos_df = r_repos, github_token = github_token,
         start_date = start_date, end_date = end_date
     )
     # Step 4: Summarize statistics
     repository_summary(
-        commits_list = commits_list,
-        repositories = r_repos, username = username, org = org,
+        commits_list = commits_list, repositories = r_repos,
         start_date = start_date, end_date = end_date
     )
 }
