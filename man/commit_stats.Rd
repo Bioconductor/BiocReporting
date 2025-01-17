@@ -54,80 +54,80 @@ summarize_commit_activity(
 \method{print}{commit_summary}(x, ...)
 }
 \arguments{
-\item{username}{`character(1)` The GitHub username}
+\item{username}{\code{character(1)} The GitHub username}
 
-\item{org}{`character(1)` optional. The organization account for which to
+\item{org}{\code{character(1)} optional. The organization account for which to
 search repositories for.}
 
-\item{github_token}{`gh_pat` The personal access token obtained from GitHub.
-By default, `gh::gh_token()` is used.}
+\item{github_token}{\code{gh_pat} The personal access token obtained from GitHub.
+By default, \code{gh::gh_token()} is used.}
 
-\item{repo_slugs}{`character()` A vector of owner and repository strings
+\item{repo_slugs}{\code{character()} A vector of owner and repository strings
 collapsed by the forward slash, e.g., "owner/repo"}
 
-\item{repo_list}{`list` A list as obtained from `account_repositories` or
-`select_repositories`}
+\item{repo_list}{\code{list} A list as obtained from \code{account_repositories} or
+\code{select_repositories}}
 
-\item{topics}{`character()` A vector of topics e.g., grant award numbers
-(`u24ca######`) that are listed under "topics" on the GitHub repository
+\item{topics}{\code{character()} A vector of topics e.g., grant award numbers
+(\code{u24ca######}) that are listed under "topics" on the GitHub repository
 page}
 
-\item{repos_df}{`tibble` A tibble of filtered R repositories as obtained from
-`filter_r_repos`}
+\item{repos_df}{\code{tibble} A tibble of filtered R repositories as obtained from
+\code{filter_r_repos}}
 
-\item{start_date, end_date}{`character(1)` The start and end dates delimiting
-commit searches in the `YYYY-MM-DD` format}
+\item{start_date, end_date}{\code{character(1)} The start and end dates delimiting
+commit searches in the \code{YYYY-MM-DD} format}
 
-\item{commits_list}{`list` The output of `repository_commits` that contains
+\item{commits_list}{\code{list} The output of \code{repository_commits} that contains
 commit details for each repository}
 }
 \value{
-`account_repositories`: A list of repositories for the corresponding
-  account or organization using the `gh` package.
+\code{account_repositories}: A list of repositories for the corresponding
+account or organization using the \code{gh} package.
 
-`select_repositories`: A list of repository metadata as obtained by
-  `"GET /repos/{owner}/{repo}"` GitHub API endpoint using the `gh` package.
+\code{select_repositories}: A list of repository metadata as obtained by
+\code{"GET /repos/{owner}/{repo}"} GitHub API endpoint using the \code{gh} package.
 
-`filter_r_repos`: A list of filtered repositories containing R code
+\code{filter_r_repos}: A list of filtered repositories containing R code
 
-`filter_topic_repos`: A list of filtered repositories matching any
-  of the topics in the GitHub repository
+\code{filter_topic_repos}: A list of filtered repositories matching any
+of the topics in the GitHub repository
 
-`repo_list_df`: A `tibble` `data.frame` with rows corresponding to
-  repositories including a column of calculated percentage of R code
+\code{repo_list_df}: A \code{tibble} \code{data.frame} with rows corresponding to
+repositories including a column of calculated percentage of R code
 
-`repository_commits`: A `list` of commits for each row in the
-  `repos_df` input
+\code{repository_commits}: A \code{list} of commits for each row in the
+\code{repos_df} input
 
-`commits_summary`: A `data.frame` of repositories and their
-  statistics including a concatenation of all commit messages (in the
-  `commit_log` column)
+\code{commits_summary}: A \code{data.frame} of repositories and their
+statistics including a concatenation of all commit messages (in the
+\code{commit_log} column)
 
-`repository_summary`: A `list` of `tibbles` that summarize activity
-  in the associated `repositories` for the `username` / `org` account
+\code{repository_summary}: A \code{list} of \code{tibbles} that summarize activity
+in the associated \code{repositories} for the \code{username} / \code{org} account
 
-`summarize_commit_activity`: A `list` of `tibbles` that summarize
-  activity in the associated `repositories` for the `username` / `org`
-  account
+\code{summarize_commit_activity}: A \code{list} of \code{tibbles} that summarize
+activity in the associated \code{repositories} for the \code{username} / \code{org}
+account
 }
 \description{
 These functions allow the user to query the GitHub API and
-  produce a comprehensive summary of commit activity for each R package
-  repository. The main workhorse function is `summarize_commit_activity`
-  which calls all other functions internally to produce a summary of GitHub R
-  repository activity.
+produce a comprehensive summary of commit activity for each R package
+repository. The main workhorse function is \code{summarize_commit_activity}
+which calls all other functions internally to produce a summary of GitHub R
+repository activity.
 }
 \details{
-The main function `summarize_commit_activity` calls most of all the
-  other helper functions to obtain a list of repository and commit summaries
-  for a specified date range. Note that `account_repositories` works at the
-  organization or user level by querying all of the repositories in the user
-  or organization account. `select_repositories` on the other hand, allows
-  the user to specify a character vector of owner and repository
-  combinations, e.g., "owner/repo".
+The main function \code{summarize_commit_activity} calls most of all the
+other helper functions to obtain a list of repository and commit summaries
+for a specified date range. Note that \code{account_repositories} works at the
+organization or user level by querying all of the repositories in the user
+or organization account. \code{select_repositories} on the other hand, allows
+the user to specify a character vector of owner and repository
+combinations, e.g., "owner/repo".
 
-  Functions such as `filter_r_repos` and `filter_topic_repos` are utilities
-  to allow filtering of repositories by certain criteria.
+Functions such as \code{filter_r_repos} and \code{filter_topic_repos} are utilities
+to allow filtering of repositories by certain criteria.
 }
 \examples{
 if (interactive()) {

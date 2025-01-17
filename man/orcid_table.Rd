@@ -7,17 +7,17 @@
 orcid_table(orcid_ids)
 }
 \arguments{
-\item{orcid_ids}{`character()` A vector of ORCID identifiers}
+\item{orcid_ids}{\code{character()} A vector of ORCID identifiers}
 }
 \value{
-a `data.frame` of employment info using the ORCID API
+a \code{data.frame} of employment info using the ORCID API
 }
 \description{
-Get a `data.frame` of employment info from ORCID
+Get a \code{data.frame} of employment info from ORCID
 }
 \details{
-The function uses fields returned by API using `rorcid` package
-  (last update on Oct. 2022)
+The function uses fields returned by API using \code{rorcid} package
+(last update on Oct. 2022)
 }
 \examples{
 if (interactive()) {
