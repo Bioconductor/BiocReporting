@@ -1,8 +1,8 @@
 #' summarize download statistics for bioconductor software
-#' @import dplyr
 #' @import ggplot2
 #' @import lubridate
 #' @importFrom utils read.table
+#' @importFrom dplyr filter
 #' @import tibble
 #' @param years integer(3)
 #' @note Modified from BiocReports script to give raw data on download activities per month.

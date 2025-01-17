@@ -330,6 +330,9 @@ commits_summary <- function(commits_list, repos_df) {
 #' @returns `repository_summary`: A `list` of `tibbles` that summarize activity
 #'   in the associated `repositories` for the `username` / `org` account
 #'
+#' @importFrom dplyr group_by summarize n n_distinct
+#' @importFrom rlang .data
+#'
 #' @export
 repository_summary <- function(
     commits_list, repositories, start_date, end_date

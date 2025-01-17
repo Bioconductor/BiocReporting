@@ -13,7 +13,7 @@ Authors@R:
 Description: Reporting for Bioconductor
 License: Artistic-2.0
 Encoding: UTF-8
-Depends: R (>= 3.6), dplyr
+Depends: R (>= 3.6)
 Imports:
     BiocBaseUtils,
     dplyr,
