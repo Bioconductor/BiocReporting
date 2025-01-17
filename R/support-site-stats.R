@@ -9,12 +9,11 @@
 
 #' @title Gather support site statistics in an interval
 #'
+#' @param base `character(1)` URL
 #'
-#' @param base character(1) URL
+#' @param from `character(1)` date in format ("YYYY/MM/DD/")
 #'
-#' @param from character(1) date in format ("YYYY/MM/DD/")
-#'
-#' @param to character(1) date in format ("YYYY/MM/DD/")
+#' @param to `character(1)` date in format ("YYYY/MM/DD/")
 #'
 #' @returns `get_support_site_stats`: list with components userdiff, toplevdiff,
 #'   questdiff, respdiff

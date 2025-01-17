@@ -14,17 +14,17 @@ get_support_site_stats(
 \method{print}{bioc_support_stats}(x, ...)
 }
 \arguments{
-\item{base}{character(1) URL}
+\item{base}{\code{character(1)} URL}
 
-\item{from}{character(1) date in format ("YYYY/MM/DD/")}
+\item{from}{\code{character(1)} date in format ("YYYY/MM/DD/")}
 
-\item{to}{character(1) date in format ("YYYY/MM/DD/")}
+\item{to}{\code{character(1)} date in format ("YYYY/MM/DD/")}
 }
 \value{
-`get_support_site_stats`: list with components userdiff, toplevdiff,
-  questdiff, respdiff
+\code{get_support_site_stats}: list with components userdiff, toplevdiff,
+questdiff, respdiff
 
-`print.bioc_support_stats`: show a report on support site usage
+\code{print.bioc_support_stats}: show a report on support site usage
 }
 \description{
 Gather support site statistics in an interval
