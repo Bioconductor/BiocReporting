@@ -19,9 +19,9 @@ Imports:
     ggplot2,
     gh,
     httr,
+    httr2,
     lubridate,
     purrr,
-    rorcid,
     tibble,
     utils
 Suggests: knitr, testthat

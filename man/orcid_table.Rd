@@ -2,17 +2,12 @@
 % Please edit documentation in R/orcid_table.R
 \name{orcid_table}
 \alias{orcid_table}
-\alias{get_orcid_employments}
-\title{Mine employment data from ORCID}
+\title{Obtain employment data from ORCID}
 \usage{
-get_orcid_employments(orcid_id)
-
-orcid_table(orcids, rename = TRUE)
+orcid_table(orcid_ids)
 }
 \arguments{
-\item{orcids}{`character()` A vector of ORCID identifiers}
-
-\item{rename}{`logical(1)` if `TRUE` use short names}
+\item{orcid_ids}{`character()` A vector of ORCID identifiers}
 }
 \value{
 a `data.frame` of employment info using the ORCID API
@@ -25,13 +20,13 @@ The function uses fields returned by API using `rorcid` package
   (last update on Oct. 2022)
 }
 \examples{
-get_orcid_employments(orcid_id = "0000-0003-4046-0063")
 if (interactive()) {
-    ## need a token?
-    oids <- c("0000-0003-4046-0063", "0000-0003-4046-0063")
-    orcid_table(oids)
-    oids <- c(oids, NA)
-    orcid_table(oids)
-    orcid_table(oids[1])
+    orcid_table(
+        orcid_ids = c(
+            "0000-0002-3242-0582",
+            "0000-0003-4046-0063",
+            "0000-0003-2725-0694"
+        )
+    )
 }
 }
