@@ -1,6 +1,6 @@
 #' summarize download statistics for bioconductor software
 #' @import ggplot2
-#' @import lubridate
+#' @importFrom lubridate as_date
 #' @importFrom utils read.table
 #' @importFrom dplyr filter
 #' @import tibble
