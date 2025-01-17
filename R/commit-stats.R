@@ -329,6 +329,9 @@ commits_summary <- function(commits_list, repos_df) {
 #' @param commits_list `list` The output of `repository_commits` that contains
 #'   commit details for each repository
 #'
+#' @param repositories `data.frame` A table of repositories as returned by
+#'   `commits_summary`
+#'
 #' @returns `repository_summary`: A `list` of `tibbles` that summarize activity
 #'   in the associated `repositories` for the `username` / `org` account
 #'
@@ -439,6 +442,10 @@ summarize_commit_activity <- function(
 # Print method for nice output
 
 #' @rdname commit_stats
+#'
+#' @param x A `commit_summary` object from `report_summary`
+#'
+#' @param ... further arguments passed to or from other methods
 #'
 #' @exportS3Method base::print
 print.commit_summary <- function(x, ...) {

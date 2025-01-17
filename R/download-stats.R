@@ -1,13 +1,22 @@
-#' summarize download statistics for bioconductor software
+#' @title Summarize download statistics for Bioconductor software
+#'
+#' @param years `numeric()` years to summarize
+#'
+#' @param final `character(1)` end date in format "YYYY-MM-DD"
+#'
+#' @note Modified from BiocReports script to give raw data on download
+#'   activities per month. There may be effects in 2022 of modified distribution
+#'   channels.
+#'
+#' @return a list with components ipplot, dlplot with ggplot elements, and a
+#'   tibble with all stats.
+#'
 #' @import ggplot2
 #' @importFrom lubridate as_date
 #' @importFrom utils read.table
 #' @importFrom dplyr filter
 #' @import tibble
-#' @param years integer(3)
-#' @note Modified from BiocReports script to give raw data on download activities per month.
-#' There may be effects in 2022 of modified distribution channels.
-#' @return a list with components ipplot, dlplot with ggplot elements, and a tibble with all stats.
+#'
 #' @examples
 #' pls = summarize_software_downloads()
 #' opar = par(no.readonly=TRUE)

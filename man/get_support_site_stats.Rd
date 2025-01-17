@@ -19,6 +19,10 @@ get_support_site_stats(
 \item{from}{\code{character(1)} date in format ("YYYY/MM/DD/")}
 
 \item{to}{\code{character(1)} date in format ("YYYY/MM/DD/")}
+
+\item{x}{A \code{bioc_support_stats} object from \code{get_support_site_stats}}
+
+\item{...}{further arguments passed to or from other methods}
 }
 \value{
 \code{get_support_site_stats}: list with components userdiff, toplevdiff,

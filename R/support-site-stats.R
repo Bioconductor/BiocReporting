@@ -45,6 +45,10 @@ get_support_site_stats <-
 #'
 #' @returns `print.bioc_support_stats`: show a report on support site usage
 #'
+#' @param x A `bioc_support_stats` object from `get_support_site_stats`
+#'
+#' @param ... further arguments passed to or from other methods
+#'
 #' @exportS3Method base::print
 print.bioc_support_stats = function(x, ...) {
     cat("Bioconductor support site usage increments.\n")

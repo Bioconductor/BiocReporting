@@ -80,6 +80,13 @@ commit searches in the \code{YYYY-MM-DD} format}
 
 \item{commits_list}{\code{list} The output of \code{repository_commits} that contains
 commit details for each repository}
+
+\item{repositories}{\code{data.frame} A table of repositories as returned by
+\code{commits_summary}}
+
+\item{x}{A \code{commit_summary} object from \code{report_summary}}
+
+\item{...}{further arguments passed to or from other methods}
 }
 \value{
 \code{account_repositories}: A list of repositories for the corresponding

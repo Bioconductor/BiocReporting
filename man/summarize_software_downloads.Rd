@@ -2,22 +2,26 @@
 % Please edit documentation in R/download-stats.R
 \name{summarize_software_downloads}
 \alias{summarize_software_downloads}
-\title{summarize download statistics for bioconductor software}
+\title{Summarize download statistics for Bioconductor software}
 \usage{
 summarize_software_downloads(years = 2018:2022, final = "2022-08-16")
 }
 \arguments{
-\item{years}{integer(3)}
+\item{years}{\code{numeric()} years to summarize}
+
+\item{final}{\code{character(1)} end date in format "YYYY-MM-DD"}
 }
 \value{
-a list with components ipplot, dlplot with ggplot elements, and a tibble with all stats.
+a list with components ipplot, dlplot with ggplot elements, and a
+tibble with all stats.
 }
 \description{
-summarize download statistics for bioconductor software
+Summarize download statistics for Bioconductor software
 }
 \note{
-Modified from BiocReports script to give raw data on download activities per month.
-There may be effects in 2022 of modified distribution channels.
+Modified from BiocReports script to give raw data on download
+activities per month. There may be effects in 2022 of modified distribution
+channels.
 }
 \examples{
 pls = summarize_software_downloads()
