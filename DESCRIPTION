@@ -6,6 +6,7 @@ Authors@R:
        person(
         "Vincent", "Carey", role = c("aut", "cre"),
         email = "stvjc@channing.harvard.edu"), 
+        person("Marcel", "Ramos", role = "aut"),
        person("Lori", "Shepherd", role="aut"), 
        person("Martin", "Morgan", role="aut")
     )
