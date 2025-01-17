@@ -1,9 +1,14 @@
-.BASE_SUPPORT_SITE_URL <-
-    "https://support.bioconductor.org/api/stats/date/"
+.BASE_SUPPORT_SITE_URL <- "https://support.bioconductor.org/"
+
+.support_site_date_stat <- function(base_url, date) {
+    request(base_url) |>
+        req_template("api/stats/date/{date}", date = date) |>
+        req_perform() |>
+        resp_body_json()
+}
 
 #' @title Gather support site statistics in an interval
 #'
-#' @import httr
 #'
 #' @param base character(1) URL
 #'
@@ -22,8 +27,8 @@ get_support_site_stats <-
         base = .BASE_SUPPORT_SITE_URL, from = "2021/01/01/", to = "2021/12/31/"
     )
 {
-    stat0 <- GET(paste0(base, from)) |> content()
-    stat1 <- GET(paste0(base, to)) |> content()
+    stat0 <- .support_site_date_stat(base, from)
+    stat1 <- .support_site_date_stat(base, to)
 
     stats = list()
     stats$userdiff = stat1$users - stat0$users

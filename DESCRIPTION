@@ -18,7 +18,6 @@ Imports:
     dplyr,
     ggplot2,
     gh,
-    httr,
     httr2,
     lubridate,
     purrr,
