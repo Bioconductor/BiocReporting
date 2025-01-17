@@ -347,13 +347,13 @@ repository_summary <- function(
             map_dbl(commits_list, function(x) x$changes$files_changed)
     )
     repo_summary <- commit_stats |>
-        group_by(repository) |>
-        summarise(
+        group_by(.data$repository) |>
+        summarize(
             total_commits = n(),
-            unique_authors = n_distinct(author),
-            total_additions = sum(additions, na.rm = TRUE),
-            total_deletions = sum(deletions, na.rm = TRUE),
-            total_files_changed = sum(files_changed, na.rm = TRUE)
+            unique_authors = n_distinct(.data$author),
+            total_additions = sum(.data$additions, na.rm = TRUE),
+            total_deletions = sum(.data$deletions, na.rm = TRUE),
+            total_files_changed = sum(.data$files_changed, na.rm = TRUE)
         )
     summary <- list(
         time_period = tibble::tibble(

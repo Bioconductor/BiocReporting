@@ -26,17 +26,17 @@ summarize_software_downloads <-
 
     tbl <- Map(read.table, urls, MoreArgs=list(header=TRUE))
     tbl0 <- as_tibble(do.call(rbind, unname(tbl)))
-    tbl0 = tbl0 |> filter(Month != "all")
+    tbl0 = tbl0 |> filter(.data$Month != "all")
     dd = paste(tbl0$Year, tbl0$Month, "15", sep="-")
     dld = as_date(dd)
     tbl0$Date = dld
-    tbl0 = tbl0 |> dplyr::filter(Date < as_date(final))
+    tbl0 = tbl0 |> dplyr::filter(.data$Date < as_date(final))
 
-    ipplot = ggplot(tbl0, aes(x=Date, y=Nb_of_distinct_IPs)) +
+    ipplot = ggplot(tbl0, aes(x=.data$Date, y=.data$Nb_of_distinct_IPs)) +
         geom_point(size=5) +
         ylab("# Unique IP addresses") +
         ggtitle("Unique IPs requesting downloads")
-    dlplot = ggplot(tbl0, aes(x=Date, y=Nb_of_downloads)) +
+    dlplot = ggplot(tbl0, aes(x=.data$Date, y=.data$Nb_of_downloads)) +
         geom_point(size=5) +
         ylab("# downloads") +
         ggtitle("Number of downloads requested")
