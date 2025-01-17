@@ -10,7 +10,12 @@ Authors@R:
        person("Lori", "Shepherd", role="aut"), 
        person("Martin", "Morgan", role="aut")
     )
-Description: Reporting for Bioconductor
+Description: Tools for reporting to Bioconductor funding agencies. Obtain
+    GitHub commits for multiple repositories within a pre-defined period. 
+    Pull the employment information for multiple ORCID iDs via the public
+    API. Obtain usage change for users and questions on the Bioconductor
+    Support site. Summarize download statistics for Bioconductor software
+    packages over multiple years.
 License: Artistic-2.0
 Encoding: UTF-8
 Depends: R (>= 3.6)
