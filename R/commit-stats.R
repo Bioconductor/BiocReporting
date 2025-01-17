@@ -33,7 +33,7 @@
 #' @examples
 #' if (interactive()) {
 #'     ## summarize overall activity for an account
-#'     gitcreds::gitcreds_set()
+#'     ## gitcreds::gitcreds_set()
 #'     summarize_commit_activity(
 #'         username = "LiNk-NY",
 #'         org = "waldronlab",
