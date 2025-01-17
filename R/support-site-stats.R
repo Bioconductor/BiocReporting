@@ -29,15 +29,15 @@ get_support_site_stats <-
     stat0 <- .support_site_date_stat(base, from)
     stat1 <- .support_site_date_stat(base, to)
 
-    stats = list()
-    stats$userdiff = stat1$users - stat0$users
-    stats$toplevdiff = stat1$toplevel - stat0$toplevel
-    stats$questdiff = stat1$questions - stat0$questions
-    stats$respdiff =
+    stats <- list()
+    stats$userdiff <- stat1$users - stat0$users
+    stats$toplevdiff <- stat1$toplevel - stat0$toplevel
+    stats$questdiff <- stat1$questions - stat0$questions
+    stats$respdiff <-
         (stat1$answers + stat1$comments) - (stat0$answers + stat0$comments)
-    stats$from = substr(from,1,10)
-    stats$to = substr(to,1,10)
-    class(stats) = c("bioc_support_stats", "list")
+    stats$from <- substr(from,1,10)
+    stats$to <- substr(to,1,10)
+    class(stats) <- c("bioc_support_stats", "list")
     stats
 }
 
