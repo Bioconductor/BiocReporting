@@ -292,6 +292,8 @@ repository_commits <- function(
 #'   statistics including a concatenation of all commit messages (in the
 #'   `commit_log` column)
 #'
+#' @importFrom utils stack
+#'
 #' @export
 commits_summary <- function(commits_list, repos_df) {
     repo_list <- split(
