@@ -113,9 +113,9 @@ statistics including a concatenation of all commit messages (in the
 \code{repository_summary}: A \code{list} of \code{tibbles} that summarize activity
 in the associated \code{repositories} for the \code{username} / \code{org} account
 
-\code{summarize_commit_activity}: A \code{list} of \code{tibbles} that summarize
-activity in the associated \code{repositories} for the \code{username} / \code{org}
-account
+\code{summarize_commit_activity}: A \code{list} of length two with
+\code{llm_summary} and \code{tibbles} that summarize activity in the associated
+\code{repositories} for the \code{username} / \code{org} account
 }
 \description{
 These functions allow the user to query the GitHub API and

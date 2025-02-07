@@ -386,9 +386,9 @@ repository_summary <- function(
 #' @importFrom gh gh gh_token
 #' @importFrom purrr map_df map_chr map_dbl map
 #'
-#' @returns `summarize_commit_activity`: A `list` of `tibbles` that summarize
-#'   activity in the associated `repositories` for the `username` / `org`
-#'   account
+#' @returns `summarize_commit_activity`: A `list` of length two with
+#'   `llm_summary` and `tibbles` that summarize activity in the associated
+#'   `repositories` for the `username` / `org` account
 #'
 #' @export
 summarize_commit_activity <- function(
@@ -431,10 +431,17 @@ summarize_commit_activity <- function(
         repos_df = r_repos, github_token = github_token,
         start_date = start_date, end_date = end_date
     )
+    commits_log <- commits_summary(
+        commits_list = commits_list, repos_df = r_repos
+    )
     # Step 4: Summarize statistics
-    repository_summary(
+    summary <- repository_summary(
         commits_list = commits_list, repositories = r_repos,
         start_date = start_date, end_date = end_date
+    )
+    list(
+        llm_summary(commits_log),
+        summary
     )
 }
 
