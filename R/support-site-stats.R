@@ -50,7 +50,7 @@ get_support_site_stats <-
 #' @param ... further arguments passed to or from other methods
 #'
 #' @exportS3Method base::print
-print.bioc_support_stats = function(x, ...) {
+print.bioc_support_stats <- function(x, ...) {
     cat("Bioconductor support site usage increments.\n")
     cat(sprintf("  From %s to %s : \n", x$from, x$to))
     cat(
