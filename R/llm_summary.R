@@ -45,13 +45,28 @@ llm_summary <- function(commits_log, llm = "gemini") {
             "Skip any projects that have no commit messages in their history."
         )
     )
-    cat(
-        chat$chat(commits_log)
+
+    result <- list(
+        summary = chat$chat(commits_log)
     )
+    class(result) <- c("llm_summary", class(result))
+    result
 }
 
 el_chat_gemini <- function(...) {
     API_KEY <- Sys.getenv("GOOGLE_API_KEY")
     stopifnot(nzchar(API_KEY))
     ellmer::chat_gemini(..., api_key = API_KEY)
+}
+
+#' @rdname llm_summary
+#'
+#' @inheritParams base::print
+#'
+#' @exportS3Method base::print
+print.llm_summary <- function(x, ...) {
+    summary <- strwrap(x$summary, width = 80L, exdent = 2L)
+    cat(
+        paste(summary, collapse = "\n")
+    )
 }
