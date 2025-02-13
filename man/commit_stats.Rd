@@ -44,7 +44,7 @@ repository_summary(commits_list, repositories, start_date, end_date)
 summarize_commit_activity(
   username,
   org,
-  repo_slugs,
+  addtl_repos,
   topics,
   start_date,
   end_date,
@@ -83,6 +83,11 @@ commit details for each repository}
 
 \item{repositories}{\code{data.frame} A table of repositories as returned by
 \code{commits_summary}}
+
+\item{addtl_repos}{\code{character()} A vector of additional repositories to
+include in the analysis (in the form of "owner/repository"). The argument
+may also be used without \code{username} or \code{org} to include repositories from
+different accounts.}
 
 \item{x}{A \code{commit_summary} object from \code{report_summary}}
 
@@ -138,16 +143,6 @@ to allow filtering of repositories by certain criteria.
 }
 \examples{
 if (interactive()) {
-    ## summarize overall activity for an account
-    ## gitcreds::gitcreds_set()
-    summarize_commit_activity(
-        username = "LiNk-NY",
-        org = "waldronlab",
-        topics = "u24ca289073",
-        start_date = "2023-08-31",
-        end_date = "2024-09-01"
-    )
-
     ## select only certain repositories for analysis
     slugs <- c(
         "vjcitn/TxRegInfra2",
@@ -155,10 +150,24 @@ if (interactive()) {
         "vjcitn/YESCDS",
         "vjcitn/xenLite"
     )
+    ## generates the necessary repository metadata
     select_repositories(repo_slugs = slugs)
+
+    ## summarize overall activity for an account and
+    ## additional repositories
+    ## gitcreds::gitcreds_set()
+    summarize_commit_activity(
+        username = "LiNk-NY",
+        org = "waldronlab",
+        addtl_repos = slugs,
+        topics = "u24ca289073",
+        start_date = "2023-08-31",
+        end_date = "2024-09-01"
+    )
 
     ## common workflow using helper functions
     ## (alternative to summarize_commit_activity)
+    ## typically not used interactively
     username <- "LiNk-NY"
     org <- "waldronlab"
     all_repos <- account_repositories(username, org)

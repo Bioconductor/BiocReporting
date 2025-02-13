@@ -32,16 +32,6 @@
 #'
 #' @examples
 #' if (interactive()) {
-#'     ## summarize overall activity for an account
-#'     ## gitcreds::gitcreds_set()
-#'     summarize_commit_activity(
-#'         username = "LiNk-NY",
-#'         org = "waldronlab",
-#'         topics = "u24ca289073",
-#'         start_date = "2023-08-31",
-#'         end_date = "2024-09-01"
-#'     )
-#'
 #'     ## select only certain repositories for analysis
 #'     slugs <- c(
 #'         "vjcitn/TxRegInfra2",
@@ -49,10 +39,24 @@
 #'         "vjcitn/YESCDS",
 #'         "vjcitn/xenLite"
 #'     )
+#'     ## generates the necessary repository metadata
 #'     select_repositories(repo_slugs = slugs)
+#'
+#'     ## summarize overall activity for an account and
+#'     ## additional repositories
+#'     ## gitcreds::gitcreds_set()
+#'     summarize_commit_activity(
+#'         username = "LiNk-NY",
+#'         org = "waldronlab",
+#'         addtl_repos = slugs,
+#'         topics = "u24ca289073",
+#'         start_date = "2023-08-31",
+#'         end_date = "2024-09-01"
+#'     )
 #'
 #'     ## common workflow using helper functions
 #'     ## (alternative to summarize_commit_activity)
+#'     ## typically not used interactively
 #'     username <- "LiNk-NY"
 #'     org <- "waldronlab"
 #'     all_repos <- account_repositories(username, org)
@@ -386,6 +390,11 @@ repository_summary <- function(
 #' @importFrom gh gh gh_token
 #' @importFrom purrr map_df map_chr map_dbl map
 #'
+#' @param addtl_repos `character()` A vector of additional repositories to
+#'   include in the analysis (in the form of "owner/repository"). The argument
+#'   may also be used without `username` or `org` to include repositories from
+#'   different accounts.
+#'
 #' @returns `summarize_commit_activity`: A `list` of length two with
 #'   `llm_summary` and `tibbles` that summarize activity in the associated
 #'   `repositories` for the `username` / `org` account
@@ -394,22 +403,31 @@ repository_summary <- function(
 summarize_commit_activity <- function(
     username,
     org,
-    repo_slugs,
+    addtl_repos,
     topics,
     start_date,
     end_date,
     github_token = gh::gh_token()
 ) {
+    stopifnot(
+        !missing(username),
+        !missing(start_date),
+        !missing(end_date)
+    )
     start_date <- as.POSIXct(start_date) |> format("%Y-%m-%dT%H:%M:%SZ")
     end_date <- as.POSIXct(end_date) |> format("%Y-%m-%dT%H:%M:%SZ")
     # Step 1: Find all repositories for the account
-    if (!missing(repo_slugs))
-        repos <- select_repositories(
-            repo_slugs = repo_slugs, github_token = github_token
-        )
-    else
+    repos <- NULL
+    if (!missing(username) || !missing(org))
         repos <- account_repositories(
             username = username, org = org, github_token = github_token
+        )
+    if (!missing(addtl_repos))
+        repos <-  c(
+            repos,
+            select_repositories(
+                repo_slugs = addtl_repos, github_token = github_token
+            )
         )
     # Step 2A: Filter for R repositories
     repos <- filter_r_repos(
