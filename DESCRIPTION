@@ -1,6 +1,6 @@
 Package: BiocReporting
 Title: Resources for reporting on Bioconductor project
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     c(
        person(
