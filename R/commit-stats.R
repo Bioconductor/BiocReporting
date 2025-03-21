@@ -76,33 +76,34 @@
 #'     llm_summary(commits_log)
 #' }
 #' @export
-account_repositories <- function(username, org, github_token = gh::gh_token()) {
-    message("Finding repositories for ", username, "...")
+account_repositories <-
+    function(username, org, github_token = gh::gh_token())
+{
+    is_org <- !missing(org)
+    target_name <- if (is_org) org else username
+    endpoint <-
+        if (is_org) "GET /orgs/{org}/repos" else "GET /users/{username}/repos"
+
+    message("Finding repositories for ", target_name, "...")
+
     repos <- list()
     page <- 1
-    has_more <- TRUE
 
-    while (has_more) {
-        if (!missing(org)) {
-            endpoint <- "GET /orgs/{org}/repos"
-            username <- org
-        } else {
-            endpoint <- "GET /users/{username}/repos"
-        }
+    repeat {
         new_repos <- gh::gh(
             endpoint,
-            username = username,
-            org = username,
+            username = target_name,
+            org = target_name,
             page = page,
             .token = github_token
         )
-        if (length(new_repos)) {
-            repos <- c(repos, new_repos)
-            page <- page + 1
-        } else {
-            has_more <- FALSE
-        }
+
+        if (!length(new_repos)) break
+
+        repos <- c(repos, new_repos)
+        page <- page + 1
     }
+
     repos
 }
 
