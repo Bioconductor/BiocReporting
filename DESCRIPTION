@@ -31,7 +31,6 @@ Imports:
     tibble,
     utils
 Suggests: knitr, testthat
-LazyData: true
 VignetteBuilder: knitr
 biocViews: Infrastructure
 RoxygenNote: 7.3.2
