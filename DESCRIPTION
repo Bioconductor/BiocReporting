@@ -18,7 +18,7 @@ Description: Tools for reporting to Bioconductor funding agencies. Obtain
     packages over multiple years.
 License: Artistic-2.0
 Encoding: UTF-8
-Depends: R (>= 3.6)
+Depends: R (>= 4.1.0)
 Imports:
     BiocBaseUtils,
     dplyr,
