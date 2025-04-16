@@ -35,6 +35,10 @@ the provided commit messages. The summary is intended to be suitable for
 reporting to a funding agency. If the \code{commits_log} contains multiple
 messages, they will be concatenated into a single string before being
 passed to the language model.
+
+Note that \code{llm_summary} calls \code{ellmer::chat_gemini}; therefore, a
+\code{"GOOGLE_API_KEY"} environment variable must be set. See
+\link[ellmer:chat_gemini]{?chat_gemini} for more details.
 }
 \examples{
 \dontshow{if ((interactive())) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
