@@ -19,9 +19,9 @@
 #'   messages, they will be concatenated into a single string before being
 #'   passed to the language model.
 #'
-#' Note that `llm_summary` calls `ellmer::chat_gemini`; therefore, a
-#' `"GOOGLE_API_KEY"` environment variable must be set. See
-#' [?chat_gemini][ellmer::chat_gemini()] for more details.
+#'   Note that `llm_summary` calls `ellmer::chat_gemini`; therefore, a
+#'   `"GOOGLE_API_KEY"` environment variable must be set. See
+#'   [?chat_gemini][ellmer::chat_gemini()] for more details.
 #'
 #' @examplesIf (interactive())
 #' commits <- c(
