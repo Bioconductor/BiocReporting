@@ -42,13 +42,15 @@ summarize_commit_activity(
   topics,
   start_date,
   end_date,
-  github_token = gh::gh_token()
+  github_token = gh::gh_token(),
+  filter.R = TRUE
 )
 
 \method{print}{commit_summary}(x, ...)
 }
 \arguments{
-\item{username}{\code{character(1)} The GitHub username}
+\item{username}{\code{character(1)} Optional. The GitHub username for which to
+search repositories for.}
 
 \item{org}{\code{character(1)} optional. The organization account for which to
 search repositories for.}
@@ -82,6 +84,9 @@ commit details for each repository}
 include in the analysis (in the form of "owner/repository"). The argument
 may also be used without \code{username} or \code{org} to include repositories from
 different accounts.}
+
+\item{filter.R}{\code{logical(1)} Whether to filter for R language repositories.
+Default is \code{TRUE}.}
 
 \item{x}{A \code{commit_summary} object from \code{report_summary}}
 
@@ -151,7 +156,6 @@ if (interactive()) {
     ## additional repositories
     ## gitcreds::gitcreds_set()
     summarize_commit_activity(
-        username = "LiNk-NY",
         org = "waldronlab",
         addtl_repos = slugs,
         topics = "u24ca289073",
@@ -167,7 +171,7 @@ if (interactive()) {
     all_repos <- account_repositories(username, org)
     r_repos <- filter_r_repos(all_repos)
     grant_repos <-
-        filter_topic_repos(r_repos, "u24ca289073")
+        filter_topic_repos(r_repos, topics = "u24ca289073")
     repo_df <- repo_list_df(grant_repos)
     repo_commits <- repository_commits(
         repo_df,

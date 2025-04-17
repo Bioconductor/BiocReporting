@@ -19,7 +19,8 @@
 #'   Functions such as `filter_r_repos` and `filter_topic_repos` are utilities
 #'   to allow filtering of repositories by certain criteria.
 #'
-#' @param username `character(1)` The GitHub username
+#' @param username `character(1)` Optional. The GitHub username for which to
+#'   search repositories for.
 #'
 #' @param org `character(1)` optional. The organization account for which to
 #'   search repositories for.
@@ -46,7 +47,6 @@
 #'     ## additional repositories
 #'     ## gitcreds::gitcreds_set()
 #'     summarize_commit_activity(
-#'         username = "LiNk-NY",
 #'         org = "waldronlab",
 #'         addtl_repos = slugs,
 #'         topics = "u24ca289073",
@@ -412,7 +412,7 @@ summarize_commit_activity <- function(
     filter.R = TRUE
 ) {
     stopifnot(
-        !missing(username),
+        !missing(username) || !missing(org),
         !missing(start_date),
         !missing(end_date),
         isScalarLogical(filter.R)
@@ -420,10 +420,20 @@ summarize_commit_activity <- function(
     start_date <- as.POSIXct(start_date) |> format("%Y-%m-%dT%H:%M:%SZ")
     end_date <- as.POSIXct(end_date) |> format("%Y-%m-%dT%H:%M:%SZ")
     # Step 1: Find all repositories for the account
-    repos <- NULL
-    if (!missing(username) || !missing(org))
-        repos <- account_repositories(
-            username = username, org = org, github_token = github_token
+    repos <- list()
+    if (!missing(username))
+        repos <- c(
+            repos,
+            account_repositories(
+                username = username, github_token = github_token
+            )
+        )
+    if (!missing(org))
+        repos <- c(
+            repos,
+            account_repositories(
+                org = org, github_token = github_token
+            )
         )
     if (!missing(addtl_repos))
         repos <-  c(
