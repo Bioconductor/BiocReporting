@@ -1,6 +1,6 @@
 Package: BiocReporting
 Title: Resources for reporting on Bioconductor project
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     c(
        person(
@@ -35,4 +35,4 @@ VignetteBuilder: knitr
 biocViews: Infrastructure
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
-Date: 2025-04-16
+Date: 2025-04-17
