@@ -18,15 +18,9 @@ account_repositories(username, org, github_token = gh::gh_token())
 
 select_repositories(repo_slugs, github_token = gh::gh_token())
 
-filter_r_repos(repo_list, username, org, github_token = gh::gh_token())
+filter_r_repos(repo_list, github_token = gh::gh_token())
 
-filter_topic_repos(
-  repo_list,
-  username,
-  org,
-  topics,
-  github_token = gh::gh_token()
-)
+filter_topic_repos(repo_list, topics, github_token = gh::gh_token())
 
 repo_list_df(repo_list)
 
@@ -171,9 +165,9 @@ if (interactive()) {
     username <- "LiNk-NY"
     org <- "waldronlab"
     all_repos <- account_repositories(username, org)
-    r_repos <- filter_r_repos(all_repos, username, org)
+    r_repos <- filter_r_repos(all_repos)
     grant_repos <-
-        filter_topic_repos(r_repos, username, org, "u24ca289073")
+        filter_topic_repos(r_repos, "u24ca289073")
     repo_df <- repo_list_df(grant_repos)
     repo_commits <- repository_commits(
         repo_df,

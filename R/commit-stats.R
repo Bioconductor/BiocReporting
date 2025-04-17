@@ -60,9 +60,9 @@
 #'     username <- "LiNk-NY"
 #'     org <- "waldronlab"
 #'     all_repos <- account_repositories(username, org)
-#'     r_repos <- filter_r_repos(all_repos, username, org)
+#'     r_repos <- filter_r_repos(all_repos)
 #'     grant_repos <-
-#'         filter_topic_repos(r_repos, username, org, "u24ca289073")
+#'         filter_topic_repos(r_repos, topics = "u24ca289073")
 #'     repo_df <- repo_list_df(grant_repos)
 #'     repo_commits <- repository_commits(
 #'         repo_df,
@@ -145,15 +145,13 @@ select_repositories <- function(repo_slugs, github_token = gh::gh_token()) {
 #'
 #' @export
 filter_r_repos <-
-    function(repo_list, username, org, github_token = gh::gh_token())
+    function(repo_list, github_token = gh::gh_token())
 {
     message("Identifying R repositories...")
-    if (!missing(org))
-        username <- org
     purrr::map(repo_list, function(repo) {
         languages <- gh::gh(
             "GET /repos/{owner}/{repo}/languages",
-            owner = username,
+            owner = repo$owner$login,
             repo = repo$name,
             .token = github_token
         )
@@ -176,16 +174,14 @@ filter_r_repos <-
 #'
 #' @export
 filter_topic_repos <-
-    function(repo_list, username, org, topics, github_token = gh::gh_token())
+    function(repo_list, topics, github_token = gh::gh_token())
 {
-    message("Filtering by repository topics")
-    if (!missing(org))
-        username <- org
+    message("Filtering by repository topics...")
     Filter(
         function(repo) {
             repo_topics <- gh::gh(
                 "GET /repos/{owner}/{repo}/topics",
-                owner = username,
+                owner = repo$owner$login,
                 repo = repo$name,
                 .token = github_token
             ) |> unlist()
@@ -432,16 +428,14 @@ summarize_commit_activity <- function(
         )
     # Step 2A: Filter for R repositories
     repos <- filter_r_repos(
-        repos, username = username, org = org,
-        github_token = github_token
+        repos, github_token = github_token
     )
     if (!length(repos))
         stop("No R package repositories found in 'username' / 'org' account")
     # Step 2B: (optional) Filter by GitHub repository topics
     if (length(topics))
         repos <- filter_topic_repos(
-            repos, username = username, org = org, topics = topics,
-            github_token = github_token
+            repos, topics = topics, github_token = github_token
         )
     # Step 2C: Convert repo list to tibble
     r_repos <- repo_list_df(repos)
