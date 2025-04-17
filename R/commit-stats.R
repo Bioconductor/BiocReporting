@@ -386,11 +386,15 @@ repository_summary <- function(
 #' @importFrom tibble tibble
 #' @importFrom gh gh gh_token
 #' @importFrom purrr map_df map_chr map_dbl map
+#' @importFrom BiocBaseUtils isScalarLogical
 #'
 #' @param addtl_repos `character()` A vector of additional repositories to
 #'   include in the analysis (in the form of "owner/repository"). The argument
 #'   may also be used without `username` or `org` to include repositories from
 #'   different accounts.
+#'
+#' @param filter.R `logical(1)` Whether to filter for R language repositories.
+#'   Default is `TRUE`.
 #'
 #' @returns `summarize_commit_activity`: A `list` of length two with
 #'   `llm_summary` and `tibbles` that summarize activity in the associated
@@ -404,12 +408,14 @@ summarize_commit_activity <- function(
     topics,
     start_date,
     end_date,
-    github_token = gh::gh_token()
+    github_token = gh::gh_token(),
+    filter.R = TRUE
 ) {
     stopifnot(
         !missing(username),
         !missing(start_date),
-        !missing(end_date)
+        !missing(end_date),
+        isScalarLogical(filter.R)
     )
     start_date <- as.POSIXct(start_date) |> format("%Y-%m-%dT%H:%M:%SZ")
     end_date <- as.POSIXct(end_date) |> format("%Y-%m-%dT%H:%M:%SZ")
@@ -427,9 +433,10 @@ summarize_commit_activity <- function(
             )
         )
     # Step 2A: Filter for R repositories
-    repos <- filter_r_repos(
-        repos, github_token = github_token
-    )
+    if (filter.r)
+        repos <- filter_r_repos(
+            repos, github_token = github_token
+        )
     if (!length(repos))
         stop("No R package repositories found in 'username' / 'org' account")
     # Step 2B: (optional) Filter by GitHub repository topics
