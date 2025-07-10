@@ -443,7 +443,7 @@ summarize_commit_activity <- function(
             )
         )
     # Step 2A: Filter for R repositories
-    if (filter.r)
+    if (filter.R)
         repos <- filter_r_repos(
             repos, github_token = github_token
         )
