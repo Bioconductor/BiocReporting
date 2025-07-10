@@ -48,3 +48,57 @@ pls$ipplot
 ```{r lkdl2}
 ggplotly(pls$dlplot)
 ```
+
+# Commit statistics
+
+Users can summarize commit activity for a GitHub user or organization.
+
+```{r comstat, eval=FALSE}
+## select only certain repositories for analysis
+slugs <- c(
+    "vjcitn/TxRegInfra2",
+    "vjcitn/BiocOncoTK",
+    "vjcitn/YESCDS",
+    "vjcitn/xenLite"
+)
+## generates the necessary repository metadata
+select_repositories(repo_slugs = slugs)
+
+## summarize overall activity for an account and
+## additional repositories
+## gitcreds::gitcreds_set()
+summarize_commit_activity(
+    org = "waldronlab",
+    addtl_repos = slugs,
+    topics = "u24ca289073",
+    start_date = "2023-08-31",
+    end_date = "2024-09-01"
+)
+```
+
+# LLM summary
+
+Generate a summary of commit logs using a language model.
+
+```{r llm, eval=FALSE}
+commits <- c(
+    "Initial commit of project alpha",
+    "Added new feature",
+    "Fixed bug with new feature"
+)
+llm_summary(commits)
+```
+
+# ORCID table
+
+Obtain employment data from ORCID.
+
+```{r orcid, eval=FALSE}
+orcid_table(
+    orcid_ids = c(
+        "0000-0002-3242-0582",
+        "0000-0003-4046-0063",
+        "0000-0003-2725-0694"
+    )
+)
+```
