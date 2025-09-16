@@ -115,6 +115,7 @@ We highlight several new collaborations:
 
 The [Community Advisory Board](https://bioconductor.org/about/community-advisory-board/) (CAB) and the [Technical Advisory Board](https://bioconductor.org/about/technical-advisory-board/) (TAB) held their annual call for new members, which closed on August 31, 2025. The selection process is currently underway, and new members will be announced later this year.
 
+In March 2025, we published a [blog post](https://blog.bioconductor.org/posts/2025-03-05-CAB/) introducing Stevie Pederson as the new CAB Co-Chair. The post also highlights the role of the CAB, its working groups, and ways for community members to get involved.
 
 # Using Bioconductor
 
