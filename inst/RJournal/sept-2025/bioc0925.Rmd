@@ -73,11 +73,13 @@ a complete account of changes throughout the ecosystem.
 
 ## Outreachy Internships
 
-We successfully concluded the December-March 2025 Outreachy Internship program. We are grateful for the contributions of our interns, who shared their experiences in a [blog post](https://blog.bioconductor.org/posts/2025-04-23-outreachy-interns-experience/). We also published a post on the rewarding experience of [mentoring for Outreachy](https://blog.bioconductor.org/posts/2025-02-26-outreachy-mentoring/).
+The December–March 2025 [Outreachy](https://www.outreachy.org/) program concluded successfully, with interns contributing to Bioconductor and sharing their reflections in a [blog post](https://blog.bioconductor.org/posts/2025-04-23-outreachy-interns-experience/). We also highlighted the rewarding experience of [mentoring for Outreachy](https://blog.bioconductor.org/posts/2025-02-26-outreachy-mentoring/).
 
 ## Community Updates
 
-The Bioconductor community has migrated from Slack to [Zulip](https://bioconductor.zulipchat.com/) for all community discussions. Read more about the move [here](https://blog.bioconductor.org/posts/2025-05-29-slack-to-zulip/). We also published a summary on our two years of [Carpentries membership](https://blog.bioconductor.org/posts/2025-02-28-carpentries-update/).
+The Bioconductor community has migrated from Slack to [Zulip](https://bioconductor.zulipchat.com/) for discussions; read more about the move [here](https://blog.bioconductor.org/posts/2025-05-29-slack-to-zulip/). We also reflected on our two years of [Carpentries membership](https://blog.bioconductor.org/posts/2025-02-28-carpentries-update/).  
+
+In July 2025, Bioconductor blog posts became available through [R-bloggers](https://www.r-bloggers.com/), broadening their reach to the wider R community. One of our first posts became one of the week's most-read, a promising sign of growing visibility. We welcome contributions to the [Bioconductor blog](https://blog.bioconductor.org/); if you have an idea, please get in touch via [Zulip](https://bioconductor.zulipchat.com/) or email.
 
 ## Publications and Preprints
 
@@ -88,7 +90,7 @@ Vince Carey, a long-time member of the Bioconductor Core Team, has published his
 ## Recaps
 
 *   **Developers' Forum:** A Bioconductor Developers' Forum was held on July 28, 2025. The event sparked discussions that have led to the creation of a new #rust channel on the Bioconductor Zulip, for community members interested in using Rust with R and Bioconductor.
-*   **GBCC 2025:** The Galaxy and Bioconductor Community Conference (GBCC 2025) was held in June 2025. A full report of the conference can be found in the [July 2025 Galaxy Community Newsletter](https://artifact.galaxyproject.org/news/2025-07-11-june2025-newsletter/).
+*   **GBCC 2025:** The Galaxy and Bioconductor Community Conference (GBCC 2025) was held in June 2025. A full report of the conference can be found in the [July 2025 Galaxy Community Newsletter](https://artifact.galaxyproject.org/news/2025-07-11-june2025-newsletter/). Recordings of talks are available in a [YouTube playlist](https://www.youtube.com/playlist?list=PLdl4u5ZRDMQTJ0O_FIO9ayqaUDfnMo4-4).
 *   **Bioconductor in scverse workshop:** A successful workshop was held in January 2025, focusing on the integration of Bioconductor tools with the scverse ecosystem. Read the recap [here](https://blog.bioconductor.org/posts/2025-01-08-bioc-in-scverse-workshop/).
 *   **Global Training:** We have had a busy year of training events, with courses in [Kenya](https://blog.bioconductor.org/posts/2025-05-21-kenya-course/), a [microbiome course in Brazil](https://blog.bioconductor.org/posts/2025-07-10-microbiome-course-brazil/), and a course in [Ethiopia](https://training.bioconductor.org/workshops/2025-08-Addis-Ababa/index.html) (blog post forthcoming).
 
