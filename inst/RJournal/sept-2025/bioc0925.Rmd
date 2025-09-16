@@ -62,7 +62,7 @@ NEWS summaries for three contributed packages chosen at random from the 72 new s
 
 - **G4SNVHunter** G-quadruplexes (G4s) are unique nucleic acid secondary structures predominantly found in guanine-rich regions and have been shown to be involved in various biological regulatory processes. G4SNVHunter is an R package designed to rapidly identify genomic sequences with G4-forming potential and accurately screen user-provided single nucleotide variants (also applicable to single nucleotide polymorphisms) that may destabilize these structures. This enables users to screen key variants for further experimental study, investigating how these variants may influence biological functions, such as gene regulation, by altering G4 formation.
 
-- **jazzPanda** This package contains the function to find marker genes for image-based spatial transcriptomics data. There are functions to create spatial vectors from the cell and transcript coordiantes, which are passed as inputs to find marker genes. Marker genes are detected for every cluster by two approaches. The first approach is by permtuation testing, which is implmented in parallel for finding marker genes for one sample study. The other approach is to build a linear model for every gene. This approach can account for multiple samples and backgound noise.
+- **jazzPanda** This package contains the function to find marker genes for image-based spatial transcriptomics data. There are functions to create spatial vectors from the cell and transcript coordinates, which are passed as inputs to find marker genes. Marker genes are detected for every cluster by two approaches. The first approach is by permutation testing, which is implemented in parallel for finding marker genes for one sample study. The other approach is to build a linear model for every gene. This approach can account for multiple samples and background noise.
 
 See the NEWS section in the [release announcement](https://bioconductor.org/news/bioc_3_21_release/) for
 a complete account of changes throughout the ecosystem.  
@@ -71,49 +71,49 @@ a complete account of changes throughout the ecosystem.
 
 # Community and Impact
 
+## Outreachy Internships
+
+We successfully concluded the December-March 2025 Outreachy Internship program. We are grateful for the contributions of our interns, who shared their experiences in a [blog post](https://blog.bioconductor.org/posts/2025-04-23-outreachy-interns-experience/). We also published a post on the rewarding experience of [mentoring for Outreachy](https://blog.bioconductor.org/posts/2025-02-26-outreachy-mentoring/).
+
+## Community Updates
+
+The Bioconductor community has migrated from Slack to [Zulip](https://bioconductor.zulipchat.com/) for all community discussions. Read more about the move [here](https://blog.bioconductor.org/posts/2025-05-29-slack-to-zulip/). We also published a summary on our two years of [Carpentries membership](https://blog.bioconductor.org/posts/2025-02-28-carpentries-update/).
+
 ## Publications and Preprints
 
-In October 2024, two notable preprints were published by Bioconductor contributors:
+Vince Carey, a long-time member of the Bioconductor Core Team, has published his reflections on the evolving complexity of the Bioconductor ecosystem in a recent journal article, "[Bioconductor: Planning a third decade of comprehensive support for genomic data science](https://doi.org/10.1016/j.patter.2025.101319)". He also shared his thoughts in a blog post, ["Ask and you shall receive"](https://blog.bioconductor.org/posts/2025-05-26-ask/).
 
-- [Eleven quick tips for writing a Bioconductor package](https://osf.io/preprints/osf/wxjky)
-Authors: Charlotte Soneson, Lori Shepherd, Marcel Ramos, Kevin Rue-Albrecht, Johannes Rainer, Hervé Pagès, and Vincent J. Carey (Bioconductor Core Team and collaborators).
-This preprint provides concise, practical advice for developing high-quality Bioconductor packages.
+# Conferences and Workshops
 
-- [Learning and teaching biological data science in the Bioconductor community](https://arxiv.org/abs/2410.01351)
-Authors: Bioconductor Training Committee and others.
-This preprint explores the Bioconductor community’s role in advancing biological data science education and training.
+## Recaps
 
-## ELIXIR BioHackathon Europe 2024
-Bioconductor participated in this collaborative event (November 4–8), held in Barcelona, to advance interoperability and innovation in life sciences. Key contributions included projects focused on EDAM-bio.tools and training infrastructure.
+*   **Developers' Forum:** A Bioconductor Developers' Forum was held on July 28, 2025. The event sparked discussions that have led to the creation of a new #rust channel on the Bioconductor Zulip, for community members interested in using Rust with R and Bioconductor.
+*   **GBCC 2025:** The Galaxy and Bioconductor Community Conference (GBCC 2025) was held in June 2025. A full report of the conference can be found in the [July 2025 Galaxy Community Newsletter](https://artifact.galaxyproject.org/news/2025-07-11-june2025-newsletter/).
+*   **Bioconductor in scverse workshop:** A successful workshop was held in January 2025, focusing on the integration of Bioconductor tools with the scverse ecosystem. Read the recap [here](https://blog.bioconductor.org/posts/2025-01-08-bioc-in-scverse-workshop/).
+*   **Global Training:** We have had a busy year of training events, with courses in [Kenya](https://blog.bioconductor.org/posts/2025-05-21-kenya-course/), a [microbiome course in Brazil](https://blog.bioconductor.org/posts/2025-07-10-microbiome-course-brazil/), and a course in [Ethiopia](https://training.bioconductor.org/workshops/2025-08-Addis-Ababa/index.html) (blog post forthcoming).
 
-## Training Domain Launch
+## Announcements
 
-Bioconductor is developing [training.bioconductor.org](https://training.bioconductor.org/), a centralised website for accessing and organising high-quality Bioconductor training materials. This work is still in progress, with the Training Committee actively discussing ways to restructure existing resources and improve their discoverability. A key focus is supporting community-driven tutorials and emphasising pedagogical quality to better serve learners.
+*   **EuroBioC 2025:** The European Bioconductor conference is taking place from September 17-19, with pre-conference workshops from September 15-16. For more information, visit the [conference website](https://eurobioc2025.bioconductor.org/).
+*   **BioCAsia 2025:** BioCAsia 2025 will be held as part of the ABACBS conference in Adelaide on November 27. The focus is on hands-on workshops, and registration is now open. For more information, visit the [conference website](https://biocasia2025.bioconductor.org/).
 
-## Bioconductor Carpentry Single-Cell Module
+# Project News
 
-Bioconductor now features an official [single-cell RNA sequencing (scRNA-seq) module](https://carpentries-incubator.github.io/bioc-scrnaseq/) in the Carpentries Incubator. This module, renamed from the Orchestrating Single-Cell Analysis (OSCA) curriculum, provides a structured introduction to scRNA-seq analysis with Bioconductor and is aimed at both learners and educators.
+## ggplot2 4.0.0 and Bioconductor
 
+Version 4.0.0 of `ggplot2` was released on September 11, 2025. The new version introduces a significant internal change from the S3 to the S7 object system, and breakages in some Bioconductor packages that customize `ggplot2`'s functionality. We received early notification from ggplot2 developers through Bioconductor Zulip, and outlined the potential impact on developers and users, and provided guidance on how to adapt to this transition in a [blog post](https://blog.bioconductor.org/posts/2025-07-07-ggplot2-update/) in July. The `ggplot2` team’s proactive communication ahead of their release helped the Bioconductor community prepare, and we appreciate their support.
 
+## Project Collaborations
 
-## Galaxy and Bioconductor Community Conference
+We highlight several new collaborations:
 
-Announced in September 2024, the first Galaxy and Bioconductor Community Conference (GBCC 2025) is scheduled for June 23-26, 2025, at Cold Spring Harbor Laboratory, New York. The conference aims to showcase the integration of Galaxy and Bioconductor tools, promoting reproducible workflows and community-driven development. For more details, see the [blog post](https://blog.bioconductor.org/posts/2024-09-03-gbcc2025-announcement/).
-
+*   **Bioconductor to Galaxy:** This project aims to improve the integration of Bioconductor tools within the Galaxy platform. A group worked on this at the GBCC2025 CoFest, and you can read more about it in this [blog post](https://blog.bioconductor.org/posts/2025-07-03-bioc-to-galaxy/).
+*   **EDAM Ontology:** We continue our work on the EDAM ontology to improve the FAIRness of our packages. See the latest update [here](https://blog.bioconductor.org/posts/2025-07-18-edam/). Our project was selected for the annual [BioHackathon Europe](https://github.com/elixir-europe/biohackathon-projects-2025/blob/main/13.md) in Berlin, November 3-7. In-person places are full but remote participation is possible and free.
+*   **Physalia Collaboration:** We have partnered with Physalia Courses to offer high-quality training in computational biology. Read about it [here](https://blog.bioconductor.org/posts/2025-06-20-physalia-collaboration/).
 
 # Boards and Working Groups Updates
 
-## New Board Members
-
-- The [Community Advisory Board](https://bioconductor.org/about/community-advisory-board/) (CAB) welcomes new members Zahraa Alsafwani, Jasmine Daly, Tobilola Ogunbowale, and Lluis Revilla. We extend our gratitude to outgoing members Daniela Cassol, Estefania Mancini, Jordana Muwanguzi, and Mike Smith for their service.
-
-- The [Technical Advisory Board](https://bioconductor.org/about/technical-advisory-board/) (TAB) welcomes new members Michael Lawrence and Jacques Serizay. Outgoing members Sean Davis and Michael Love are also warmly thanked for their contributions.
-
-## Code of Conduct Committee Elections
-
-In October 2024, Bioconductor sought new members to join its Code of Conduct (CoC) Committee, which plays a vital role in maintaining the integrity and safety of our community. The CoC meets 3–4 times annually to address important issues. Applications are now closed, but you can learn more about the committee and its work on the Code of Conduct page.
-
-If you are interested in becoming involved with any [Bioconductor working group](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html) please contact the group leader(s).
+The [Community Advisory Board](https://bioconductor.org/about/community-advisory-board/) (CAB) and the [Technical Advisory Board](https://bioconductor.org/about/technical-advisory-board/) (TAB) held their annual call for new members, which closed on August 31, 2025. The selection process is currently underway, and new members will be announced later this year.
 
 
 # Using Bioconductor
@@ -145,7 +145,7 @@ Key resources include:
 - A question-and-answer style
   [user support site](https://support.bioconductor.org) and
   developer-oriented [mailing list](https://stat.ethz.ch/mailman/listinfo/bioc-devel).
-- A community slack workspace ([sign up](https://slack.bioconductor.org))
+- A community Zulip workspace ([sign up](https://chat.bioconductor.org))
    for extended technical discussion.
 - The [F1000Research Bioconductor gateway](https://f1000research.com/gateways/bioconductor)
 for peer-reviewed Bioconductor workflows as well as conference contributions.
@@ -159,8 +159,7 @@ for peer-reviewed Bioconductor workflows as well as conference contributions.
 Upcoming and recently completed events are browsable at our
 [events page](https://bioconductor.org/help/events/).
 
-The [Technical](https://bioconductor.org/about/technical-advisory-board/)
-and and [Community](https://bioconductor.org/about/community-advisory-board/)
+The [Technical](https://bioconductor.org/about/technical-advisory-board/) and [Community](https://bioconductor.org/about/community-advisory-board/)
 Advisory Boards provide guidance to ensure that the project addresses
 leading-edge biological problems with advanced technical approaches,
 and adopts practices (such as a
@@ -168,4 +167,4 @@ project-wide [Code of Conduct](https://bioconductor.org/about/code-of-conduct/))
 that encourages all to participate. We look forward to
 welcoming you!
 
-We welcome your feedback on these updates and invite you to connect with us through the [Bioconductor Slack](https://slack.bioconductor.org) workspace or by emailing community@bioconductor.org.
+We welcome your feedback on these updates and invite you to connect with us through the [Bioconductor Zulip](https://chat.bioconductor.org) workspace or by emailing community@bioconductor.org.
