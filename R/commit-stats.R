@@ -449,7 +449,7 @@ summarize_commit_activity <- function(
     if (!length(repos))
         stop("No R package repositories found in 'username' / 'org' account")
     # Step 2B: (optional) Filter by GitHub repository topics
-    if (length(topics))
+    if (!missing(topics))
         repos <- filter_topic_repos(
             repos, topics = topics, github_token = github_token
         )
