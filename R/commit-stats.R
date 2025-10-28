@@ -412,7 +412,6 @@ summarize_commit_activity <- function(
     filter.R = TRUE
 ) {
     stopifnot(
-        !missing(username) || !missing(org),
         !missing(start_date),
         !missing(end_date),
         isScalarLogical(filter.R)
