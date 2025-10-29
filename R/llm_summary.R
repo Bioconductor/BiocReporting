@@ -60,7 +60,7 @@ llm_summary <- function(commits_log, llm = "gemini") {
 el_chat_gemini <- function(...) {
     API_KEY <- Sys.getenv("GOOGLE_API_KEY")
     stopifnot(nzchar(API_KEY))
-    ellmer::chat_gemini(..., api_key = API_KEY)
+    ellmer::chat_google_gemini(..., api_key = API_KEY)
 }
 
 #' @rdname llm_summary
