@@ -22,7 +22,7 @@ core team and project activities.
  
 # Software
 
-```{r lkdat,results="hide",echo=FALSE}
+```{r lkdat,results="hide",echo=FALSE,message=FALSE}
 library(BiocPkgTools)
 softli = biocPkgList(version="3.22")
 expli = biocPkgList(version="3.22", repo="BioCexp")
