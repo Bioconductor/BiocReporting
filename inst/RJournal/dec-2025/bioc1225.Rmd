@@ -62,7 +62,6 @@ See the NEWS section in the [release announcement](https://bioconductor.org/news
 a complete account of changes throughout the ecosystem.  
 
 
-
 # Community and Impact
 
 ## Community Team Updates
@@ -88,13 +87,13 @@ In November 2025, Crowell et al. released a [preprint](https://www.biorxiv.org/c
 ## Recaps
 
 *   **EuroBioC 2025:** The European Bioconductor Conference (GBCC 2025) was held in September 2025 in Barcelona. A blog post recap of the conference can be found in the [Bioconductor blog](https://blog.bioconductor.org/posts/2025-10-24-EuroBioC2025-recap/). Recordings of talks are available in a [YouTube playlist](https://www.youtube.com/playlist?list=PLdl4u5ZRDMQS_qvtLJNdDqHL6z5jj5y_7).
-*   **BioCAsia 2025:** BioCAsia 2025 was held as part of the ABACBS conference in Adelaide November 27-28. The focus was on hands-on workshops and saw >100 participants. For more information, visit the [conference website](https://biocasia2025.bioconductor.org/).
+*   **BioCAsia 2025:** BioCAsia 2025 was held as part of the ABACBS conference in Adelaide, November 27-28. The focus was on hands-on workshops and saw >100 participants. For more information, visit the [conference website](https://biocasia2025.bioconductor.org/).
 *   **Global Training:** We have had a busy second half of the year of training events, with two in-person courses in Africa, in [Ethiopia](https://blog.bioconductor.org/posts/2025-11-24-ethiopia-course/) and  [Benin](https://blog.bioconductor.org/posts/2025-12-11-benin-course/).
 
 ## Announcements
 
-*   **EuroBioC 2026:** The European Bioconductor conference is taking place from June 3-5, with pre-conference activities June 1-2. For more information, visit the [conference website](https://eurobioc2026.bioconductor.org/).
-*   **BioC 2026:** The North American Bioconductor conference is taking place from August 10-12, with post-conference activities August 13-14. For more information, visit the [conference website](https://bioc2026.bioconductor.org/).
+*   **EuroBioC 2026:** The European Bioconductor conference is taking place in Turku, Finland from June 3-5, with pre-conference activities June 1-2. For more information, visit the [conference website](https://eurobioc2026.bioconductor.org/).
+*   **BioC 2026:** The North American Bioconductor conference is taking place in Seattle from August 10-12, with post-conference activities August 13-14. For more information, visit the [conference website](https://bioc2026.bioconductor.org/).
 
 
 # Boards and Working Groups Updates
