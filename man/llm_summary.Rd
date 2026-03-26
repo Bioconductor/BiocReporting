@@ -41,7 +41,7 @@ Note that \code{llm_summary} calls \code{ellmer::chat_gemini}; therefore, a
 \link[ellmer:chat_google_gemini]{?chat_google_gemini} for more details.
 }
 \examples{
-\dontshow{if ((interactive())) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if ((interactive())) withAutoprint(\{ # examplesIf}
 commits <- c(
     "Initial commit of project alpha",
     "Added new feature",
