@@ -38,7 +38,7 @@ passed to the language model.
 
 Note that \code{llm_summary} calls \code{ellmer::chat_gemini}; therefore, a
 \code{"GOOGLE_API_KEY"} environment variable must be set. See
-\link[ellmer:chat_gemini]{?chat_gemini} for more details.
+\link[ellmer:chat_google_gemini]{?chat_google_gemini} for more details.
 }
 \examples{
 \dontshow{if ((interactive())) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}

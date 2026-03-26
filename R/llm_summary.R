@@ -21,7 +21,7 @@
 #'
 #'   Note that `llm_summary` calls `ellmer::chat_gemini`; therefore, a
 #'   `"GOOGLE_API_KEY"` environment variable must be set. See
-#'   [?chat_gemini][ellmer::chat_gemini()] for more details.
+#'   [?chat_google_gemini][ellmer::chat_google_gemini()] for more details.
 #'
 #' @examplesIf (interactive())
 #' commits <- c(
