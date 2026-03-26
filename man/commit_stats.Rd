@@ -5,6 +5,7 @@
 \alias{account_repositories}
 \alias{select_repositories}
 \alias{filter_r_repos}
+\alias{get_repo_topics}
 \alias{filter_topic_repos}
 \alias{repo_list_df}
 \alias{repository_commits}
@@ -19,6 +20,8 @@ account_repositories(username, org, github_token = gh::gh_token())
 select_repositories(repo_slugs, github_token = gh::gh_token())
 
 filter_r_repos(repo_list, github_token = gh::gh_token())
+
+get_repo_topics(owner, repo, github_token = gh::gh_token())
 
 filter_topic_repos(repo_list, topics, github_token = gh::gh_token())
 
@@ -100,6 +103,9 @@ account or organization using the \code{gh} package.
 \code{"GET /repos/{owner}/{repo}"} GitHub API endpoint using the \code{gh} package.
 
 \code{filter_r_repos}: A list of filtered repositories containing R code
+
+\code{get_repo_topics}: A character vector of topics for the specified
+repository
 
 \code{filter_topic_repos}: A list of filtered repositories matching any
 of the topics in the GitHub repository

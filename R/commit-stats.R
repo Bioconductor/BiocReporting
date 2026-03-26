@@ -165,6 +165,25 @@ filter_r_repos <-
 
 #' @rdname commit_stats
 #'
+#' @returns `get_repo_topics`: A character vector of topics for the specified
+#'   repository
+#'
+#' @export
+get_repo_topics <- function(owner, repo, github_token = gh::gh_token()) {
+    if (is.list(repo)) {
+        owner <- repo$owner$login
+        repo <- repo$name
+    }
+    gh::gh(
+        "GET /repos/{owner}/{repo}/topics",
+        owner = owner,
+        repo = repo,
+        .token = github_token
+    ) |> unlist()
+}
+
+#' @rdname commit_stats
+#'
 #' @param topics `character()` A vector of topics e.g., grant award numbers
 #'   (`u24ca######`) that are listed under "topics" on the GitHub repository
 #'   page
