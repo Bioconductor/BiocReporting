@@ -153,7 +153,8 @@ if (interactive()) {
         "vjcitn/TxRegInfra2",
         "vjcitn/BiocOncoTK",
         "vjcitn/YESCDS",
-        "vjcitn/xenLite"
+        "vjcitn/xenLite",
+        "vjcitn/OntoProc2"
     )
     ## generates the necessary repository metadata
     select_repositories(repo_slugs = slugs)
