@@ -31,13 +31,17 @@
 #' )
 #' llm_summary(commits)
 #' @export
-llm_summary <- function(commits_log, llm = "gemini") {
+llm_summary <- function(
+    commits_log,
+    llm = "gemini",
+    model = "gemini-flash-latest"
+) {
     if (!identical(length(commits_log), 1L))
         commits_log <- paste(commits_log, collapse = "\n")
     llm <- match.arg(llm)
     chat_model <- switch(
         llm,
-        gemini = el_chat_gemini
+        gemini = function(...) { el_chat_gemini(model = model, ...) }
     )
     chat <- chat_model(
         system_prompt = paste(
@@ -57,10 +61,9 @@ llm_summary <- function(commits_log, llm = "gemini") {
     result
 }
 
-el_chat_gemini <- function(...) {
-    API_KEY <- Sys.getenv("GOOGLE_API_KEY")
-    stopifnot(nzchar(API_KEY))
-    ellmer::chat_google_gemini(..., api_key = API_KEY)
+el_chat_gemini <- function(model, ...) {
+    stopifnot(nzchar(Sys.getenv("GOOGLE_API_KEY")))
+    ellmer::chat_google_gemini(model = model, ...)
 }
 
 #' @rdname llm_summary
