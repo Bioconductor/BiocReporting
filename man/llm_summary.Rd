@@ -5,7 +5,7 @@
 \alias{print.llm_summary}
 \title{Generate a Summary of Commit Logs Using a Language Model}
 \usage{
-llm_summary(commits_log, llm = "gemini")
+llm_summary(commits_log, llm = "gemini", model = "gemini-flash-latest")
 
 \method{print}{llm_summary}(x, ...)
 }
