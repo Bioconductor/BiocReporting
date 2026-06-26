@@ -1,0 +1,144 @@
+---
+title: "Bioconductor Notes, July 2026"
+date: "2026-07-15"
+author:
+  - name: Maria Doyle, Bioconductor Community Manager
+    affiliation: University of Limerick
+  - name: Bioconductor Core Developer Team
+    affiliation: Dana-Farber Cancer Institute, Roswell Park Comprehensive Cancer Center, City University of New York, Fred Hutchinson Cancer Research Center, Mass General Brigham
+---
+
+
+# Introduction 
+
+[Bioconductor](https://bioconductor.org) provides
+tools for the analysis and comprehension of high-throughput genomic
+data.  The project has entered its twenty-first year, with funding
+for core development and infrastructure maintenance continuing through current NIH NHGRI support (NIH NHGRI 2U24HG004059).  Additional support is provided
+by NIH NCI, Chan-Zuckerberg Initiative, National Science Foundation,
+Microsoft, and Amazon. In this news report, we highlight recent core team and project activities.
+ 
+# Software
+
+```{r lkdat,results="hide",echo=FALSE,message=FALSE}
+library(BiocPkgTools)
+softli = biocPkgList(version="3.23")
+expli = biocPkgList(version="3.23", repo="BioCexp")
+worli = biocPkgList(version="3.23", repo="BioCworkflows")
+annli = biocPkgList(version="3.23", repo="BioCann")
+curR = "4.6"
+nsoft = nrow(softli)
+nexp = nrow(expli)
+nanno = nrow(annli)
+nwkfl = nrow(worli)
+nbooks = 8
+```
+
+Bioconductor [3.23](https://bioconductor.org/news/bioc_3_23_release/), released in April 2026, is now available. It is
+compatible with R `r curR` and consists of `r nsoft` software packages, `r nexp`
+experiment data packages, `r nanno` up-to-date annotation packages, `r nwkfl`
+workflows, and `r nbooks` books. [Books](https://bioconductor.org/books/release/) are
+built regularly from source, ensuring full reproducibility; an example is the
+community-developed [Orchestrating Single-Cell Analysis with Bioconductor](https://bioconductor.org/books/release/OSCA/).
+
+
+# Core Team and Infrastructure Updates
+
+TODO: Add Lori's blog posts 
+
+NEWS summaries for three contributed packages chosen at random from the 94 new software contributions are:
+
+<!-- set.seed(1234); sample(1:94, size=3) gave indices -->
+
+
+See the NEWS section in the [release announcement](https://bioconductor.org/news/bioc_3_23_release/) for
+a complete account of changes throughout the ecosystem.  
+
+
+# Community and Impact
+
+## Community Team Updates
+TODO: Add Nick's blog post and Laurah's Bioc Africa series
+
+## Outreachy Internships
+
+
+## Community Updates
+
+
+
+## Publications and Preprints
+
+
+
+# Conferences and Workshops
+
+## Upcoming
+
+*   **BioC2026:** The [North American Bioconductor Conference](https://bioc2026.bioconductor.org/) will be held 10-12 August 2026 in Seattle. Registration is open until 27 July. This year there will be two post-conference events 13-14 August, a Bioconductor Carpentry single-cell workshop and a hackathon. Registration for those is [here](https://bioc2026.bioconductor.org/post-conference/).
+*   **BioCAsia 2026:** BioCAsia 2026 will be held as part of the ABACBS conference in Melbourne, November 19-20. For more information, visit the [conference website](https://biocasia2026.bioconductor.org/).
+*   **EuroBioC2027:** The 2027 European Bioconductor Conference will take place in Basel, Switzerland 8-10 September 2027.
+
+## Recap
+
+*   **EuroBioC2026:** The European Bioconductor Conference was held in June 2026 in Turku, Finland. A blog post recap of the conference can be found in the [Bioconductor blog](https://blog.bioconductor.org/posts/2026-06-19-EuroBioc2026-recap/). Recordings of talks are available in a [YouTube playlist](https://www.youtube.com/playlist?list=PLdl4u5ZRDMQSeTgs5bOmbGmSMWVZits14).
+
+
+
+# Boards and Working Groups Updates
+
+## New Board Members
+
+TODO: Annual call for new TAB and CAB members is open.
+
+# Using Bioconductor
+
+Start using
+Bioconductor by installing the most recent version of R and evaluating
+the commands
+```
+  if (!requireNamespace("BiocManager", quietly = TRUE))
+      install.packages("BiocManager")
+  BiocManager::install()
+```
+
+Install additional packages and dependencies,
+e.g., [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment), with
+```
+  BiocManager::install("SingleCellExperiment")
+```
+[Docker](https://bioconductor.org/help/docker/)
+images provides a very effective on-ramp for power users to rapidly
+obtain access to standardized and scalable computing environments.
+Key resources include:
+
+
+- [bioconductor.org](https://bioconductor.org) to install,
+  learn, use, and develop Bioconductor packages.
+- A list of [available software](https://bioconductor.org/packages)
+  linking to pages describing each package.
+- A question-and-answer style
+  [user support site](https://support.bioconductor.org) and
+  developer-oriented [mailing list](https://stat.ethz.ch/mailman/listinfo/bioc-devel).
+- A community Zulip workspace ([sign up](https://chat.bioconductor.org))
+   for extended technical discussion.
+- The [Zenodo Bioconductor community](https://zenodo.org/communities/bioconductor) contains materials from conferences, such as slides and posters, and other community events.
+- The [Bioconductor YouTube](https://www.youtube.com/user/bioconductor)
+     channel includes recordings of keynote and talks from recent 
+     conferences, in addition to 
+     video recordings of training courses. 
+- Our [package submission](https://github.com/Bioconductor/Contributions)
+  repository for open technical review of new packages.
+
+Upcoming and recently completed events are browsable at our
+[events page](https://bioconductor.org/help/events/).
+
+The [Technical](https://bioconductor.org/about/technical-advisory-board/) and [Community](https://bioconductor.org/about/community-advisory-board/)
+Advisory Boards provide guidance to ensure that the project addresses
+leading-edge biological problems with advanced technical approaches,
+and adopts practices (such as a
+project-wide [Code of Conduct](https://bioconductor.org/about/code-of-conduct/))
+that encourages all to participate. We look forward to
+welcoming you!
+
+We welcome your feedback on these updates and invite you to connect with us through the [Bioconductor Zulip](https://chat.bioconductor.org) workspace or by emailing community@bioconductor.org.
