@@ -83,7 +83,16 @@ TODO: Add Nick's blog post and Laurah's Bioc Africa series
 
 *   **EuroBioC2026:** The European Bioconductor Conference was held in June 2026 in Turku, Finland. A blog post recap of the conference can be found in the [Bioconductor blog](https://blog.bioconductor.org/posts/2026-06-19-EuroBioc2026-recap/). Recordings of talks are available in a [YouTube playlist](https://www.youtube.com/playlist?list=PLdl4u5ZRDMQSeTgs5bOmbGmSMWVZits14).
 
+*   **Bioconductor–scverse collaboration** has been strengthened through hackathons on interoperable single-cell and spatial omics analysis.
+Events held in Heidelberg, Germany (2023), Ghent, Belgium (2023), Basel, Switzerland (2024), and Padua, Italy (2026) helped establish shared data models, including
+[*anndataR*](https://www.bioconductor.org/packages/anndataR) and
+[*Rarr*](https://www.bioconductor.org/packages/Rarr), 
+which lay the foundation for *spatialdataR*. Further details are available in a
+[Bioconductor blog post](https://blog.bioconductor.org/posts/2025-01-08-bioc-in-scverse-workshop/)
+and two BioHackrXiv preprints: [2024](https://doi.org/10.37044/osf.io/8ck3e) and
+[2026](https://doi.org/10.37044/osf.io/s6bph_v1).
 
+*   A **Bioconductor-centric hackathon** was held in April 2026 on San Servolo Island by Venice, Italy, where participants worked on advancing infrastructure for spatial omics and image-derived data. Event format and outcomes are described in a [Bioconductor blog post](https://blog.bioconductor.org/posts/2026-06-17-venice/) and [BioHackrXiv preprint](https://osf.io/preprints/biohackrxiv/9ej32_v1).
 
 # Boards and Working Groups Updates
 
