@@ -44,15 +44,54 @@ community-developed [Orchestrating Single-Cell Analysis with Bioconductor](https
 
 # Core Team and Infrastructure Updates
 
-TODO: Add Lori's blog posts 
+## New Bioconductor Package Submission Process
+
+Bioconductor is moving towards using R-universe for its daily build system. As
+we move in this direction it was also necessary to update the submission process
+for Bioconductor packages. While the daily builders are still transitioning, the
+new submission process location is now live. The new system utilizes GitHub
+Actions to trigger review milestones and R-Universe as the build/check
+backend. The new system provides a smoother experience; it is more automated and
+avoids administrative steps that have historically bottlenecked the review
+process. See [New Package Submission
+Process](https://blog.bioconductor.org/posts/2026-06-15-new-submission-process-with-Runiverse/)
+blog post for relevant links and documentation.
+
+
+## NEWS from packages 
 
 NEWS summaries for three contributed packages chosen at random from the 94 new software contributions are:
 
 <!-- set.seed(1234); sample(1:94, size=3) gave indices -->
 
-
 See the NEWS section in the [release announcement](https://bioconductor.org/news/bioc_3_23_release/) for
 a complete account of changes throughout the ecosystem.  
+
+
+## Bioconductor Maintainer Validation System
+
+Bioconductor policies include being an active and reachable
+maintainer. Maintainer emails in the DESCRIPTION of packages often go stale as
+maintainers change positions. There is also a necessity to have maintainers opt
+into Bioconductor policies and procedures as they change over time. We have
+created an application that uses Amazon Simple Email Service (SES) to send
+periodic emails to maintainers to check if the endpoint is reachable and to send
+a verification opt-in of Bioconductor current policies and procedures and code
+of conduct once a year. We expect this system to improve over time. A summary of
+the current implementation is available on the [Bioconductor blog
+post](https://blog.bioconductor.org/posts/2026-06-16-maintainer-validation/)
+
+
+## Upcoming
+
+Bioconductor is in process transitioning to utilize R-universe for daily builds
+of Bioconductor packages. Updates will be posted on Bioconductor blogs and
+mailing lists as we progress forward.
+
+Bioconductor is also transitioning from utlizing git.bioconductor.org privately
+hosted git server to GitHub for canonical Bioconductor package code base. There
+will be instructions to developers with necessary updates as we progress
+forward. End users should not be affected in any way.
 
 
 # Community and Impact
