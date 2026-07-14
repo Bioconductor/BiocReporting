@@ -62,7 +62,18 @@ blog post for relevant links and documentation.
 
 NEWS summaries for three contributed packages chosen at random from the 94 new software contributions are:
 
-<!-- set.seed(1234); sample(1:94, size=3) gave indices -->
+<!-- set.seed(1234); sample(1:94, size=3) gave indices
+soft22 <- biocPkgList(version = "3.22")
+soft23 <- biocPkgList(version = "3.23")
+newpkgs <- soft23[!soft23$Package %in% soft22$Package, ]
+newpkgs[idx, c("Package", Description")]
+-->
+
+- **fourSynergy**: fourSynergy is an ensemble algorithm leveraging synergies among the existing 4C-seq algorithms r3C-seq, peakC, r.4cker and fourSig. It uses a weighted voting approach to perform improved interaction calling. fourSynergy supports also differential interaction calling.
+
+- **DOTSeq**: Differential open reading frame (ORF) translation analysis framework for ribosome profiling (Ribo-seq) with matched RNA-seq. Implements (i) Differential ORF Usage (DOU), a beta-binomial generalized linear model that models the expected proportion of Ribo-seq versus RNA-seq reads mapping to each ORF within a gene, and (ii) ORF-level Differential Translation Efficiency (DTE), a negative binomial GLM that capture changes in translation efficiency of individual ORFs across experimental conditions. Supports ORF-level read summarization for bulk and single-cell Ribo-seq.
+
+- **singIST**:  Provides with toolkits to implement a full singIST analysis with pseudobulked Seurat objects of disease models and human data.
 
 See the NEWS section in the [release announcement](https://bioconductor.org/news/bioc_3_23_release/) for
 a complete account of changes throughout the ecosystem.  
