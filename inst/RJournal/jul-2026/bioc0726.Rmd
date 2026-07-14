@@ -88,7 +88,7 @@ Bioconductor is in process transitioning to utilize R-universe for daily builds
 of Bioconductor packages. Updates will be posted on Bioconductor blogs and
 mailing lists as we progress forward.
 
-Bioconductor is also transitioning from utlizing git.bioconductor.org privately
+Bioconductor is also transitioning from utilizing git.bioconductor.org privately
 hosted git server to GitHub for canonical Bioconductor package code base. There
 will be instructions to developers with necessary updates as we progress
 forward. End users should not be affected in any way.
@@ -102,15 +102,15 @@ The Bioconductor Community Team continues to expand developer and community enga
 
 In April, Developer Engagement Lead Nicholas Cooley published a [blog post](https://blog.bioconductor.org/posts/2026-04-09-developer-engagement/) introducing the new Developer Engagement Lead role and highlighting current initiatives, including the Developer Forum, the Champions Programme, developer hackathons, and improving Bioconductor documentation and discoverability.
 
-A Bioconductor Africa seminar series was launched in April 2026 and continues to grow under the leadership of Laurah Nyasita Ondari, providing regular online seminars for researchers across Africa. Recordings and upcoming events are available through the [Bioconductor Training website](https://training.bioconductor.org/workshops/bioc-africa-seminars/).
+The Bioconductor Africa seminar series, launched in April 2026 and led by Laurah Nyasita Ondari, continues to provide regular online seminars for researchers across Africa. Recordings and upcoming events are available through the [Bioconductor Training website](https://training.bioconductor.org/workshops/bioc-africa-seminars/).
 
 
 # Conferences and Workshops
 
 ## Upcoming
 
-*   **BioC2026:** The [North American Bioconductor Conference](https://bioc2026.bioconductor.org/) will be held 10-12 August 2026 in Seattle. Registration is open until 27 July. This year there will be two post-conference events 13-14 August, a Bioconductor Carpentry single-cell workshop and a hackathon. Registration for those is [here](https://bioc2026.bioconductor.org/post-conference/).
-*   **BioCAsia 2026:** BioCAsia 2026 will be held as part of the ABACBS conference in Melbourne, November 19-20. For more information, visit the [conference website](https://biocasia2026.bioconductor.org/).
+*   **BioC2026:** The [North American Bioconductor Conference](https://bioc2026.bioconductor.org/) will be held 10 to 12 August 2026 in Seattle. Registration is open until 27 July. This year there will be two post-conference events 13 to 14 August, a Bioconductor Carpentry single-cell workshop and a hackathon. Registration for those is [here](https://bioc2026.bioconductor.org/post-conference/).
+*   **BioCAsia 2026:** BioCAsia 2026 will be held as part of the ABACBS conference in Melbourne, 19 to 20 November. For more information, visit the [conference website](https://biocasia2026.bioconductor.org/).
 *   **EuroBioC2027:** The 2027 European Bioconductor Conference will take place in Basel, Switzerland 8-10 September 2027.
 
 ## Recap
@@ -123,7 +123,7 @@ A Bioconductor Africa seminar series was launched in April 2026 and continues to
 
 Two new working groups have recently been established:
 
-- [Early Career Council](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#early-career-council) to strengthen support and engagement for student and early-career community members.
+- [Early Career Council](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#early-career-council) to strengthen support and engagement for early-career community members.
 - [FAIR Data Sharing](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#fair-data-sharing) to coordinate community activities around FAIR data practices and interoperability.
 
 The annual call for new members of the Technical Advisory Board (TAB) and Community Advisory Board (CAB) is also [open](https://genomic.social/@bioconductor/116894837472783257).
