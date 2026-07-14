@@ -13,7 +13,7 @@ author:
 
 [Bioconductor](https://bioconductor.org) provides
 tools for the analysis and comprehension of high-throughput genomic
-data.  The project has entered its twenty-first year, with funding
+data.  The project has entered its twenty-sixth year, with funding
 for core development and infrastructure maintenance continuing through current NIH NHGRI support (NIH NHGRI 2U24HG004059).  Additional support is provided
 by NIH NCI, Chan-Zuckerberg Initiative, National Science Foundation,
 Microsoft, and Amazon. In this news report, we highlight recent core team and project activities.
@@ -97,17 +97,12 @@ forward. End users should not be affected in any way.
 # Community and Impact
 
 ## Community Team Updates
-TODO: Add Nick's blog post and Laurah's Bioc Africa series
 
-## Outreachy Internships
+The Bioconductor Community Team continues to expand developer and community engagement activities.
 
+In April, Developer Engagement Lead Nicholas Cooley published a [blog post](https://blog.bioconductor.org/posts/2026-04-09-developer-engagement/) introducing the new Developer Engagement Lead role and highlighting current initiatives, including the Developer Forum, the Champions Programme, developer hackathons, and improving Bioconductor documentation and discoverability.
 
-## Community Updates
-
-
-
-## Publications and Preprints
-
+A Bioconductor Africa seminar series was launched in April 2026 and continues to grow under the leadership of Laurah Nyasita Ondari, providing regular online seminars for researchers across Africa. Recordings and upcoming events are available through the [Bioconductor Training website](https://training.bioconductor.org/workshops/bioc-africa-seminars/).
 
 
 # Conferences and Workshops
@@ -126,9 +121,12 @@ TODO: Add Nick's blog post and Laurah's Bioc Africa series
 
 # Boards and Working Groups Updates
 
-## New Board Members
+Two new working groups have recently been established:
 
-TODO: Annual call for new TAB and CAB members is open.
+- [Early Career Council](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#early-career-council) to strengthen support and engagement for student and early-career community members.
+- [FAIR Data Sharing](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#fair-data-sharing) to coordinate community activities around FAIR data practices and interoperability.
+
+The annual call for new members of the Technical Advisory Board (TAB) and Community Advisory Board (CAB) is also [open](https://genomic.social/@bioconductor/116894837472783257).
 
 # Using Bioconductor
 
@@ -166,7 +164,7 @@ Key resources include:
      channel includes recordings of keynote and talks from recent 
      conferences, in addition to 
      video recordings of training courses. 
-- Our [package submission](https://github.com/Bioconductor/Contributions)
+- Our [package submission](https://github.com/Bioconductor/BiocContributions)
   repository for open technical review of new packages.
 
 Upcoming and recently completed events are browsable at our
