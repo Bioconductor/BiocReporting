@@ -114,7 +114,7 @@ The Bioconductor Community Team continues to expand developer and community enga
 In April, Developer Engagement Lead Nicholas Cooley published a [blog post](https://blog.bioconductor.org/posts/2026-04-09-developer-engagement/) introducing the new Developer Engagement Lead role and highlighting current initiatives, including the Developer Forum, the Champions Programme, developer hackathons, and improving Bioconductor documentation and discoverability.
 
 The Bioconductor Africa seminar series, launched in April 2026 and led by Laurah Nyasita Ondari, continues to provide regular online seminars for researchers across Africa. Recordings and upcoming events are available through the [Bioconductor Training website](https://training.bioconductor.org/workshops/bioc-africa-seminars/).
-
+In addition, the BiocAsia working group have recently launched a bi-monthly seminar series highlighting the research being undertaken throughout the Asia-Pacific, and aiming to bring together members of the Bioconductor community within the region.
 
 # Conferences and Workshops
 
