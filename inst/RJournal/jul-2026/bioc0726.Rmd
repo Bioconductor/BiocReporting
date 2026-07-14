@@ -93,7 +93,7 @@ the current implementation is available on the [Bioconductor blog
 post](https://blog.bioconductor.org/posts/2026-06-16-maintainer-validation/)
 
 
-## Upcoming
+## Looking Ahead
 
 Bioconductor is in process transitioning to utilize R-universe for daily builds
 of Bioconductor packages. Updates will be posted on Bioconductor blogs and
@@ -111,13 +111,15 @@ forward. End users should not be affected in any way.
 
 The Bioconductor Community Team continues to expand developer and community engagement activities.
 
-In April, Developer Engagement Lead Nicholas Cooley published a [blog post](https://blog.bioconductor.org/posts/2026-04-09-developer-engagement/) introducing the new Developer Engagement Lead role and highlighting current initiatives, including the Developer Forum, the Champions Programme, developer hackathons, and improving Bioconductor documentation and discoverability.
+In April 2026, Developer Engagement Lead Nicholas Cooley published a [blog post](https://blog.bioconductor.org/posts/2026-04-09-developer-engagement/) introducing the new Developer Engagement Lead role and highlighting current initiatives, including the Developer Forum, the Champions Programme, developer hackathons, and improving Bioconductor documentation and discoverability. 
+
+The monthly [Developer Forum](https://bioconductor.org/developers/developers-forum/) brings together package developers and community members to discuss technical topics, share expertise, and identify areas for improvement across the Bioconductor ecosystem. Developer hackathons complement these activities by providing opportunities for collaborative problem solving, mentoring, and community building. A developer hackathon was held alongside EuroBioC2026 in Turku, Finland, on 1–2 June 2026, with a further hackathon planned as a post-conference event at BioC2026 in Seattle on 13–14 August 2026.
 
 The Bioconductor Africa seminar series, launched in April 2026 and led by Laurah Nyasita Ondari, continues to provide regular online seminars for researchers across Africa. Recordings and upcoming events are available through the [Bioconductor Training website](https://training.bioconductor.org/workshops/bioc-africa-seminars/).
 
 ## Regional Community Activities
 
-In addition, the BiocAsia working group has recently launched a bi-monthly seminar series highlighting the research being undertaken throughout the Asia-Pacific, and aiming to bring together members of the Bioconductor community within the region. 
+In addition, the BiocAsia working group recently launched a bi-monthly seminar series highlighting the research being undertaken throughout the Asia-Pacific, and aiming to bring together members of the Bioconductor community within the region. 
 
 The Bioconductor LATAM seminar series hosted six seminars featuring researchers from across the Bioconductor community. The talks covered genomics, transcriptomics, proteomics, and software development, showcasing the breadth of research and development activities in the region and helping to strengthen connections among Bioconductor users, researchers, and developers throughout Latin America.
 
