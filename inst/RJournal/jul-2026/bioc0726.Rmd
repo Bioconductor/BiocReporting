@@ -123,6 +123,19 @@ The Bioconductor LATAM seminar series hosted six seminars featuring researchers 
 
 Details of upcoming seminars are available on the Bioconductor [events page](https://bioconductor.org/help/events/).
 
+## Outreachy Internships
+
+The impact of Outreachy participation continues beyond the internship
+period. Former Outreachy intern Chioma Oselu remains actively involved
+in the Bioconductor community through BugSigDB. In April 2026, Chioma
+Oselu and Svetlana Ugarcina Perovic delivered a [BugSigDB workshop](https://www.bioinformaticsinstitute.africa/events/tab/6/24/19th_Annual_International_Biocuration_Conference/79) at the
+International Biocuration Conference. Chioma was also awarded a travel
+fellowship and received first prize for her [conference presentation](https://www.linkedin.com/pulse/international-biocuration-conference-reflections-from-stephen-adeyemo-xr6ce/).
+
+Several current and former Outreachy interns and applicants continue to
+contribute to BugSigDB through three active community curation teams,
+demonstrating the lasting engagement fostered through the programme.
+
 
 # Conferences and Workshops
 
