@@ -2,10 +2,15 @@
 title: "Bioconductor Notes, July 2026"
 date: "2026-07-15"
 author:
-  - name: Maria Doyle, Bioconductor Community Manager
+  - name: Maria Doyle
     affiliation: University of Limerick
   - name: Bioconductor Core Developer Team
     affiliation: Dana-Farber Cancer Institute, Roswell Park Comprehensive Cancer Center, City University of New York, Fred Hutchinson Cancer Research Center, Mass General Brigham
+    
+output:
+  rjtools::rjournal_article:
+    self_contained: yes
+    toc: no
 ---
 
 
