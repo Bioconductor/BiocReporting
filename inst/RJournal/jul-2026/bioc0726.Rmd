@@ -58,7 +58,7 @@ Process](https://blog.bioconductor.org/posts/2026-06-15-new-submission-process-w
 blog post for relevant links and documentation.
 
 
-## NEWS from packages 
+## New packages 
 
 NEWS summaries for three contributed packages chosen at random from the 94 new software contributions are:
 
@@ -66,7 +66,7 @@ NEWS summaries for three contributed packages chosen at random from the 94 new s
 soft22 <- biocPkgList(version = "3.22")
 soft23 <- biocPkgList(version = "3.23")
 newpkgs <- soft23[!soft23$Package %in% soft22$Package, ]
-newpkgs[idx, c("Package", Description")]
+newpkgs[idx, c("Package", "Description")]
 -->
 
 - **fourSynergy**: An ensemble algorithm for improved 4C-seq interaction calling.
@@ -87,7 +87,7 @@ maintainers change positions. There is also a necessity to have maintainers opt
 into Bioconductor policies and procedures as they change over time. We have
 created an application that uses Amazon Simple Email Service (SES) to send
 periodic emails to maintainers to check if the endpoint is reachable and to send
-a verification opt-in of Bioconductor current policies and procedures and code
+a verification opt-in of current Bioconductor policies and procedures and code
 of conduct once a year. We expect this system to improve over time. A summary of
 the current implementation is available on the [Bioconductor blog
 post](https://blog.bioconductor.org/posts/2026-06-16-maintainer-validation/)
@@ -95,12 +95,12 @@ post](https://blog.bioconductor.org/posts/2026-06-16-maintainer-validation/)
 
 ## Looking Ahead
 
-Bioconductor is in process transitioning to utilize R-universe for daily builds
+Bioconductor is in the process of transitioning to utilize R-universe for daily builds
 of Bioconductor packages. Updates will be posted on Bioconductor blogs and
 mailing lists as we progress forward.
 
 Bioconductor is also transitioning from utilizing git.bioconductor.org privately
-hosted git server to GitHub for canonical Bioconductor package code base. There
+hosted git server to GitHub for canonical Bioconductor package codebase. There
 will be instructions to developers with necessary updates as we progress
 forward. End users should not be affected in any way.
 
@@ -115,7 +115,7 @@ In April 2026, Developer Engagement Lead Nicholas Cooley published a [blog post]
 
 The monthly [Developer Forum](https://bioconductor.org/developers/developers-forum/) brings together package developers and community members to discuss technical topics, share expertise, and identify areas for improvement across the Bioconductor ecosystem. Developer hackathons complement these activities by providing opportunities for collaborative problem solving, mentoring, and community building. A developer hackathon was held alongside EuroBioC2026 in Turku, Finland, on 1–2 June 2026, with a further hackathon planned as a post-conference event at BioC2026 in Seattle on 13–14 August 2026.
 
-The Bioconductor Africa seminar series, launched in April 2026 and led by Laurah Nyasita Ondari, continues to provide regular online seminars for researchers across Africa. Recordings and upcoming events are available through the [Bioconductor Training website](https://training.bioconductor.org/workshops/bioc-africa-seminars/).
+The Bioconductor Africa seminar series, launched in April 2026 and led by Laurah Nyasita Ondari, provides regular online seminars for researchers across Africa. Recordings and upcoming events are available through the [Bioconductor Training website](https://training.bioconductor.org/workshops/bioc-africa-seminars/).
 
 ## Regional Community Activities
 
